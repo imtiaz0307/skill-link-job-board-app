@@ -66,7 +66,7 @@ export default function Home() {
           {
             resources.slice(0, 6).map(resource => <ResourceCard resource={resource} />)
           }
-          <Link href={"/"} className="bg-blue-500 text-white py-4 px-12 text-lg rounded mt-10">See More</Link>
+          <Link href={"/resources"} className="bg-blue-500 text-white py-4 px-12 text-lg rounded mt-10">See More</Link>
         </div>
       </section>
     </main>
