@@ -15,7 +15,7 @@ type JobItem = {
 
 const JobListItem = ({ job }: JobItem) => {
     return (
-        <div className="border-solid border-sky-500 border-2 rounded-xl p-4 flex items-center gap-4 w-full max-w-[800px] bg-white">
+        <div className="border-solid border-sky-200 border-2 rounded-xl p-4 flex items-center gap-4 w-full max-w-[800px] bg-white">
             <div className="w-full">
                 <h3 className="text-[2rem] bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent font-[600]">{job.title}</h3>
                 <h4 className="font-[600] flex gap-2 items-center mt-1"><FcMoneyTransfer fontSize={16} /> <span className="pb-[4px] text-[14px]">{job.salary_range}</span></h4>

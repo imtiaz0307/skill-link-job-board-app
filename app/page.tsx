@@ -4,6 +4,9 @@ import FeatureCard from "@/components/FeatureCard/FeatureCard";
 import Link from "next/link";
 import JobListItem from "@/components/JobListItem/JobListItem";
 import { jobs } from "@/data/Jobs";
+import { resources } from "@/data/resources";
+import ResourceCard from "@/components/ResourceCard/ResourceCard";
+import Mailing from "@/components/MailingForm/Mailing";
 
 export default function Home() {
   return (
@@ -28,7 +31,7 @@ export default function Home() {
       </section>
 
       {/* features section */}
-      <section className="min-h-[300px] py-8 px-12">
+      <section className="min-h-[300px] py-12 px-12">
         <h2 className="text-blue-500 text-[3rem] font-[600] text-center mb-10">Why SkillLink?</h2>
 
         {/* features */}
@@ -53,6 +56,19 @@ export default function Home() {
           }
         </div>
         <Link href={"/"} className="bg-blue-500 text-white py-4 px-12 text-lg rounded mt-10">See More</Link>
+      </section>
+
+      {/* resources section */}
+      <section className="py-12 px-12">
+        <h2 className="text-blue-500 text-[3rem] font-[600] text-center mb-10">Recommended Resources!</h2>
+        {/* resourcess */}
+        <div className="flex flex-wrap gap-8 justify-center">
+          {/* resource */}
+          {
+            resources.map(resource => <ResourceCard resource={resource} />)
+          }
+          <Link href={"/"} className="bg-blue-500 text-white py-4 px-12 text-lg rounded mt-10">See More</Link>
+        </div>
       </section>
     </main>
   )
