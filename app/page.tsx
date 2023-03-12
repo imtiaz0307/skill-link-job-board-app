@@ -6,7 +6,6 @@ import JobListItem from "@/components/JobListItem/JobListItem";
 import { jobs } from "@/data/Jobs";
 import { resources } from "@/data/resources";
 import ResourceCard from "@/components/ResourceCard/ResourceCard";
-import Mailing from "@/components/MailingForm/Mailing";
 
 export default function Home() {
   return (
@@ -52,10 +51,10 @@ export default function Home() {
         <div className="flex flex-col items-center w-full gap-8">
           {/* job */}
           {
-            jobs.map((job, index) => <JobListItem key={index} job={job} />)
+            jobs.slice(0, 10).map((job, index) => <JobListItem key={index} job={job} />)
           }
         </div>
-        <Link href={"/"} className="bg-blue-500 text-white py-4 px-12 text-lg rounded mt-10">See More</Link>
+        <Link href={"/jobs"} className="bg-blue-500 text-white py-4 px-12 text-lg rounded mt-10">See More</Link>
       </section>
 
       {/* resources section */}
@@ -65,7 +64,7 @@ export default function Home() {
         <div className="flex flex-wrap gap-8 justify-center">
           {/* resource */}
           {
-            resources.map(resource => <ResourceCard resource={resource} />)
+            resources.slice(0, 6).map(resource => <ResourceCard resource={resource} />)
           }
           <Link href={"/"} className="bg-blue-500 text-white py-4 px-12 text-lg rounded mt-10">See More</Link>
         </div>
