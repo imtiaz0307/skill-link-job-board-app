@@ -45,7 +45,7 @@ const Jobs = () => {
                 </div>
                 <div className='flex-1 flex flex-col gap-6 items-center'>
                     {
-                        jobs.slice(page * limit - limit, page * limit).map((job, index) => <JobListItem key={index} job={job} />)
+                        jobs.slice(page * limit - limit, page * limit).map((job, index) => <JobListItem key={index} job={{ title: job.title as string, salary_range: job.salary_range, location: job.location, job_type: job.job_type, deadline: job.deadline, slug: job.slug }} />)
                     }
                     <div className='flex items-center gap-2'>
                         {

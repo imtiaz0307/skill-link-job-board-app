@@ -1,8 +1,39 @@
 export const jobs = [
     {
-        author: "Muhammad Imtiaz",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Senior MERN Stack Developer",
         slug: "senior-mern-stack-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Sukkur, Sindh",
         job_type: "Remote",
@@ -16,9 +47,40 @@ export const jobs = [
         deadline: "19-03-2023",
     },
     {
-        author: "Muhammad Ishaq",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Senior Full Stack Developer",
         slug: "senior-full-stack-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Sukkur, Sindh",
         job_type: "Remote",
@@ -32,9 +94,40 @@ export const jobs = [
         deadline: "19-03-2023",
     },
     {
-        author: "Sara Ali",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "UI/UX Designer",
         slug: "ui-ux-designer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 3,
         location: "Lahore, Punjab",
         job_type: "Onsite",
@@ -48,9 +141,40 @@ export const jobs = [
         deadline: "22-03-2023",
     },
     {
-        author: "Ali Ahmed",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Senior Python Developer",
         slug: "senior-python-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Karachi, Sindh",
         job_type: "Remote",
@@ -64,9 +188,40 @@ export const jobs = [
         deadline: "20-03-2023",
     },
     {
-        author: "Fatima Khalil",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Junior Frontend Developer",
         slug: "junior-frontend-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 5,
         location: "Islamabad, Islamabad Capital Territory",
         job_type: "Onsite",
@@ -80,9 +235,40 @@ export const jobs = [
         deadline: "24-03-2023",
     },
     {
-        author: "Asad Raza",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Backend Developer",
         slug: "backend-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Rawalpindi, Punjab",
         job_type: "Remote",
@@ -96,8 +282,39 @@ export const jobs = [
         deadline: "25-03-2023",
     },
     {
-        author: "Ayesha Malik", title: "Data Scientist",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         slug: "data-scientist",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Lahore, Punjab",
         job_type: "Onsite",
@@ -112,9 +329,40 @@ export const jobs = [
 
     },
     {
-        author: "Ahmed Hassan",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Senior React Developer",
         slug: "senior-react-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 3,
         location: "Islamabad, Islamabad Capital Territory",
         job_type: "Remote",
@@ -128,9 +376,40 @@ export const jobs = [
         deadline: "26-03-2023",
     },
     {
-        author: "Zahra Ali",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Product Manager",
         slug: "product-manager",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Karachi, Sindh",
         job_type: "Onsite",
@@ -144,9 +423,40 @@ export const jobs = [
         deadline: "28-03-2023",
     },
     {
-        author: "Abdul Qadir",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "DevOps Engineer",
         slug: "devops-engineer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Islamabad, Islamabad Capital Territory",
         job_type: "Remote",
@@ -160,9 +470,40 @@ export const jobs = [
         deadline: "27-03-2023",
     },
     {
-        author: "Rabia Khan",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Senior Java Developer",
         slug: "senior-java-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Lahore, Punjab",
         job_type: "Onsite",
@@ -176,9 +517,40 @@ export const jobs = [
         deadline: "30-03-2023",
     },
     {
-        author: "Naveed Ahmed",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Data Engineer",
         slug: "data-engineer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Karachi, Sindh",
         job_type: "Remote",
@@ -192,9 +564,40 @@ export const jobs = [
         deadline: "29-03-2023",
     },
     {
-        author: "Tariq Mahmood",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Senior iOS Developer",
         slug: "senior-ios-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Rawalpindi, Punjab",
         job_type: "Onsite",
@@ -208,9 +611,40 @@ export const jobs = [
         deadline: "01-04-2023",
     },
     {
-        author: "Saba Ali",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "UI/UX Designer",
         slug: "ui-ux-designer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Karachi, Sindh",
         job_type: "Remote",
@@ -224,9 +658,40 @@ export const jobs = [
         deadline: "02-04-2023",
     },
     {
-        author: "Ali Raza",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Senior PHP Developer",
         slug: "senior-php-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Lahore, Punjab",
         job_type: "Remote",
@@ -240,9 +705,40 @@ export const jobs = [
         deadline: "03-04-2023",
     },
     {
-        author: "Saima Nadeem",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Technical Writer",
         slug: "technical-writer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Islamabad, Islamabad Capital Territory",
         job_type: "Remote",
@@ -256,9 +752,40 @@ export const jobs = [
         deadline: "04-04-2023",
     },
     {
-        author: "Asim Ali",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Senior Android Developer",
         slug: "senior-android-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Rawalpindi, Punjab",
         job_type: "Onsite",
@@ -272,9 +799,40 @@ export const jobs = [
         deadline: "06-04-2023",
     },
     {
-        author: "Fatima Zahra",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "QA Engineer",
         slug: "qa-engineer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Karachi, Sindh",
         job_type: "Remote",
@@ -288,9 +846,40 @@ export const jobs = [
         deadline: "05-04-2023",
     },
     {
-        author: "Ahmed Ali",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Front-end Developer",
         slug: "front-end-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 3,
         location: "Lahore, Punjab",
         job_type: "Remote",
@@ -304,9 +893,40 @@ export const jobs = [
         deadline: "07-04-2023",
     },
     {
-        author: "Hira Khan",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "DevOps Engineer",
         slug: "devops-engineer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Islamabad, Islamabad Capital Territory",
         job_type: "Remote",
@@ -320,9 +940,40 @@ export const jobs = [
         deadline: "08-04-2023",
     },
     {
-        author: "Ali Haider",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Machine Learning Engineer",
         slug: "machine-learning-engineer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Karachi, Sindh",
         job_type: "Remote",
@@ -336,9 +987,40 @@ export const jobs = [
         deadline: "09-04-2023",
     },
     {
-        author: "Samina Ahmed",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Back-end Developer",
         slug: "back-end-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Lahore, Punjab",
         job_type: "Remote",
@@ -352,9 +1034,40 @@ export const jobs = [
         deadline: "10-04-2023",
     },
     {
-        author: "Usman Akhtar",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Senior Data Scientist",
         slug: "senior-data-scientist",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Islamabad, Islamabad Capital Territory",
         job_type: "Remote",
@@ -368,9 +1081,40 @@ export const jobs = [
         deadline: "11-04-2023",
     },
     {
-        author: "Zainab Hussain",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Cybersecurity Analyst",
         slug: "cybersecurity-analyst",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Karachi, Sindh",
         job_type: "Remote",
@@ -384,9 +1128,40 @@ export const jobs = [
         deadline: "12-04-2023",
     },
     {
-        author: "Khalid Ali",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Senior iOS Developer",
         slug: "senior-ios-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Lahore, Punjab",
         job_type: "Onsite",
@@ -400,9 +1175,40 @@ export const jobs = [
         deadline: "13-04-2023",
     },
     {
-        author: "Hassan Ali",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Technical Lead",
         slug: "technical-lead",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Lahore, Punjab",
         job_type: "Remote",
@@ -416,9 +1222,40 @@ export const jobs = [
         deadline: "16-04-2023",
     },
     {
-        author: "Sarah Ahmed",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Senior Front-end Developer",
         slug: "senior-front-end-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Islamabad, Islamabad Capital Territory",
         job_type: "Remote",
@@ -432,9 +1269,40 @@ export const jobs = [
         deadline: "17-04-2023",
     },
     {
-        author: "Noman Ali",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Technical Writer",
         slug: "technical-writer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Karachi, Sindh",
         job_type: "Remote",
@@ -448,9 +1316,40 @@ export const jobs = [
         deadline: "18-04-2023",
     },
     {
-        author: "Saima Malik",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Marketing Manager",
         slug: "marketing-manager",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Lahore, Punjab",
         job_type: "Remote",
@@ -464,9 +1363,40 @@ export const jobs = [
         deadline: "19-04-2023",
     },
     {
-        author: "Farhan Ali",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "QA Analyst",
         slug: "qa-analyst",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Islamabad, Islamabad Capital Territory",
         job_type: "Remote",
@@ -480,9 +1410,40 @@ export const jobs = [
         deadline: "20-04-2023",
     },
     {
-        author: "Ali Raza",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "DevOps Engineer",
         slug: "devops-engineer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Karachi, Sindh",
         job_type: "Remote",
@@ -496,9 +1457,40 @@ export const jobs = [
         deadline: "21-04-2023",
     },
     {
-        author: "Hassan Raza",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Software Engineer",
         slug: "software-engineer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Lahore, Punjab",
         job_type: "Remote",
@@ -512,9 +1504,40 @@ export const jobs = [
         deadline: "22-04-2023",
     },
     {
-        author: "Sana Ali",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Mobile App Developer",
         slug: "mobile-app-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Islamabad, Islamabad Capital Territory",
         job_type: "Remote",
@@ -528,9 +1551,40 @@ export const jobs = [
         deadline: "23-04-2023",
     },
     {
-        author: "Amir Khan",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Data Analyst",
         slug: "data-analyst",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Karachi, Sindh",
         job_type: "Remote",
@@ -544,9 +1598,40 @@ export const jobs = [
         deadline: "24-04-2023",
     },
     {
-        author: "Maryam Iqbal",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Product Manager",
         slug: "product-manager",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Lahore, Punjab",
         job_type: "Remote",
@@ -560,9 +1645,40 @@ export const jobs = [
         deadline: "25-04-2023",
     },
     {
-        author: "Hina Malik",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Backend Developer",
         slug: "backend-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Islamabad, Islamabad Capital Territory",
         job_type: "Remote",
@@ -576,9 +1692,40 @@ export const jobs = [
         deadline: "26-04-2023",
     },
     {
-        author: "Kamran Ali",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "UI/UX Designer",
         slug: "ui-ux-designer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Karachi, Sindh",
         job_type: "Remote",
@@ -592,9 +1739,40 @@ export const jobs = [
         deadline: "27-04-2023",
     },
     {
-        author: "Zainab Aslam",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Frontend Developer",
         slug: "frontend-developer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 2,
         location: "Lahore, Punjab",
         job_type: "Remote",
@@ -608,9 +1786,40 @@ export const jobs = [
         deadline: "28-04-2023",
     },
     {
-        author: "Saima Azam",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Technical Writer",
         slug: "technical-writer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Islamabad, Islamabad Capital Territory",
         job_type: "Remote",
@@ -624,9 +1833,40 @@ export const jobs = [
         deadline: "29-04-2023",
     },
     {
-        author: "Shoaib Hassan",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Artificial Intelligence Engineer",
         slug: "ai-engineer",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Karachi, Sindh",
         job_type: "Remote",
@@ -640,9 +1880,40 @@ export const jobs = [
         deadline: "30-04-2023",
     },
     {
-        author: "Hira Zahid",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Database Administrator",
         slug: "db-administrator",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Lahore, Punjab",
         job_type: "Remote",
@@ -656,9 +1927,40 @@ export const jobs = [
         deadline: "01-05-2023",
     },
     {
-        author: "Adil Akbar",
+        company: "MITH Tech Solutions",
+        author: {
+            name: "Muhammad Imtiaz",
+            img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
+            profile_link: ""
+        },
         title: "Cloud Solutions Architect",
         slug: "cloud-solutions-architect",
+        description: `We are seeking a MERN Stack Developer with the following experience and skills:
+
+        Proficiency in MongoDB, Express.js, React, and Node.js
+        Experience with front-end frameworks such as React Native, Angular, or Vue.js
+        Strong understanding of RESTful APIs
+        Knowledge of version control systems, such as Git
+        Experience with cloud platforms, such as AWS or Google Cloud
+        Excellent problem-solving and communication skills
+        If you are a MERN Stack Developer with the required experience and skills, we encourage you to apply. We are an equal opportunity employer and welcome all qualified candidates to apply.
+    
+    Benefits
+    
+        Competitive salary
+        Provident fund
+        Annual bonuses
+        Paid time off
+        Professional development opportunities
+        Casual dress code
+        Collaborative work environment
+    
+    Requirements
+    
+        Bachelor's or Master's degree in Computer Science or related field
+        3+ years of experience in MERN Stack development
+        Strong knowledge of JavaScript and related frameworks
+        Excellent problem-solving and communication skills`,
         vacancies: 1,
         location: "Islamabad, Islamabad Capital Territory",
         job_type: "Remote",

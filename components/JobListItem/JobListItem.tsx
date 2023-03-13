@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 type JobItem = {
     job: {
-        title: String,
+        title: string,
         salary_range: {
             from: number,
             to: number
@@ -22,7 +22,7 @@ const JobListItem = ({ job }: JobItem) => {
         <div className="border-solid border-sky-200 border-2 rounded-xl p-4 flex items-center gap-4 w-full max-w-[800px] bg-white">
             <div className="w-full">
                 <h3 className="text-[2rem] bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent font-[600]">{job.title}</h3>
-                <h4 className="font-[600] flex gap-2 items-center mt-1"><FcMoneyTransfer fontSize={16} /> <span className="pb-[4px] text-[14px]">{job.salary_range.from} PKR to {job.salary_range.to} PKR</span></h4>
+                <h4 className="font-[600] flex gap-2 items-center mt-1"><FcMoneyTransfer fontSize={16} /> <span className="pb-[4px] text-[14px]">{job.salary_range.from.toLocaleString()} PKR to {job.salary_range.to.toLocaleString()} PKR</span></h4>
                 <div className="text-gray-700 flex gap-8 mt-6">
                     <p className="flex gap-2 items-center text-[.8rem]">
                         <MdLocationPin fontSize={13} className="text-blue-500" />

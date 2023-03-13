@@ -51,7 +51,7 @@ export default function Home() {
         <div className="flex flex-col items-center w-full gap-8">
           {/* job */}
           {
-            jobs.slice(0, 10).map((job, index) => <JobListItem key={index} job={job} />)
+            jobs.slice(0, 10).map((job, index) => <JobListItem key={index} job={{ title: job.title as string, salary_range: job.salary_range, location: job.location, job_type: job.job_type, deadline: job.deadline, slug: job.slug }} />)
           }
         </div>
         <Link href={"/jobs"} className="bg-blue-500 text-white py-4 px-12 text-lg rounded mt-10">See More</Link>
