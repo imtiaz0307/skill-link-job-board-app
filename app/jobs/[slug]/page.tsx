@@ -6,6 +6,7 @@ import { BsFillBriefcaseFill, BsCalendar2XFill } from "react-icons/bs"
 import { TbBulb } from "react-icons/tb"
 import { GrUserWorker } from "react-icons/gr"
 import Image from "next/image";
+import JobListItem from "@/components/JobListItem/JobListItem";
 
 type Param = {
     params: {
@@ -23,13 +24,13 @@ const JobPage = ({ params }: Param) => {
 
         else if (experience > 2 && experience <= 5) return "Mid Level"
 
-        return "Senor Level"
+        return "Senior Level"
     }
 
     return (
         <main>
             <section className="px-12 py-10 flex gap-4">
-                <div className="p-4 border-blue-200 border-2 rounded-[10px] max-w-[500px]">
+                <div className="p-4 border-blue-200 border-2 rounded-[10px] max-w-[500px] min-w-[300px] flex-1">
                     {/* job title */}
                     <h1 className="text-[2rem] font-[600] text-blue-500">{job.title}</h1>
                     {/* company and experience details */}
@@ -84,7 +85,14 @@ const JobPage = ({ params }: Param) => {
                         <p>{job.description}</p>
                     </div>
                 </div>
-                <div>related jobs will be shown here</div>
+                <div className="flex-1">
+                    <h2 className="text-[2.5rem] font-[600] text-blue-500 text-center mb-8">Related Jobs</h2>
+                    <div className="flex flex-col gap-4">
+                        {
+                            jobs.filter(curJob => curJob.slug !== slug).slice(0, 5).map((job, index) => <JobListItem key={index} job={{ title: job.title as string, salary_range: job.salary_range, location: job.location, job_type: job.job_type, deadline: job.deadline, slug: job.slug }} />)
+                        }
+                    </div>
+                </div>
             </section>
         </main>
     )
