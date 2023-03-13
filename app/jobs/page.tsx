@@ -3,11 +3,51 @@
 import Filter from '@/components/Filter/Filter'
 import JobListItem from '@/components/JobListItem/JobListItem'
 import { jobs } from '@/data/Jobs'
-import { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
+
+type Jobs = {
+    company: string,
+    author: {
+        name: string,
+        img: string,
+        profile_link: string
+    },
+    title: string,
+    slug: string,
+    description: string,
+    vacancies: number,
+    location: string,
+    job_type: string,
+    applicants: number,
+    skills_required: string[],
+    experience: number,
+    salary_range: {
+        from: number,
+        to: number,
+    },
+    deadline: string,
+}
+
 
 const Jobs = () => {
     const [page, setPage] = useState<number>(1)
     const [limit, setLimit] = useState<number>(10)
+    const [jobsToShow, setJobsToShow] = useState<Jobs[]>([])
+    const search = useSearchParams()
+    const query = search?.get("query")
+
+    useEffect(() => {
+        if (query) {
+            const filteredJobs: Jobs[] = jobs.filter((job): job is Jobs & { title: string } => {
+                return job.title.toLowerCase().includes(query) || job.slug.toLowerCase().includes(query)
+            });
+            setJobsToShow(filteredJobs)
+        } else {
+            setJobsToShow(jobs)
+        }
+    }, [])
+
     return (
         <main>
             {/* hero section */}
@@ -43,32 +83,38 @@ const Jobs = () => {
                     {/* posted at filter */}
                     <Filter filterTitles={["Posted At", "Today", "A week ago", "A month ago", "More than a month ago"]} />
                 </div>
-                <div className='flex-1 flex flex-col gap-6 items-center'>
-                    {
-                        jobs.slice(page * limit - limit, page * limit).map((job, index) => <JobListItem key={index} job={{ title: job.title as string, salary_range: job.salary_range, location: job.location, job_type: job.job_type, deadline: job.deadline, slug: job.slug }} />)
-                    }
-                    <div className='flex items-center gap-2'>
-                        {
-                            page !== 1
-                                ?
-                                <span className='h-[40px] w-[40px] flex justify-center items-center rounded-full border-blue-200 border-2 cursor-pointer text-xl' onClick={() => setPage(prev => prev - 1)}>&larr;</span>
-                                :
-                                ""
-                        }
-                        {
-                            [...Array(Math.ceil(jobs.length / limit))].map((_, index) => {
-                                return <span className={`h-[40px] w-[40px] flex justify-center items-center rounded-full border-blue-200 border-2 cursor-pointer ${index + 1 === page ? "bg-blue-500 text-white" : ""}`} key={index} onClick={() => setPage(index + 1)}>{index + 1}</span>
-                            })
-                        }
-                        {
-                            Math.ceil(jobs.length / limit) !== page
-                                ?
-                                <span className='h-[40px] w-[40px] flex justify-center items-center rounded-full border-blue-200 border-2 cursor-pointer text-xl' onClick={() => setPage(prev => prev + 1)}>&rarr;</span>
-                                :
-                                ""
-                        }
-                    </div>
-                </div>
+                {
+                    jobsToShow.length > 0
+                        ?
+                        <div className='flex-1 flex flex-col gap-6 items-center'>
+                            {
+                                jobsToShow.slice(page * limit - limit, page * limit).map((job, index) => <JobListItem key={index} job={{ title: job.title as string, salary_range: job.salary_range, location: job.location, job_type: job.job_type, deadline: job.deadline, slug: job.slug }} />)
+                            }
+                            <div className='flex items-center gap-2'>
+                                {
+                                    page !== 1
+                                        ?
+                                        <span className='h-[40px] w-[40px] flex justify-center items-center rounded-full border-blue-200 border-2 cursor-pointer text-xl' onClick={() => setPage(prev => prev - 1)}>&larr;</span>
+                                        :
+                                        ""
+                                }
+                                {
+                                    [...Array(Math.ceil(jobsToShow.length / limit))].map((_, index) => {
+                                        return <span className={`h-[40px] w-[40px] flex justify-center items-center rounded-full border-blue-200 border-2 cursor-pointer ${index + 1 === page ? "bg-blue-500 text-white" : ""}`} key={index} onClick={() => setPage(index + 1)}>{index + 1}</span>
+                                    })
+                                }
+                                {
+                                    jobsToShow.length > 10 && Math.ceil(jobs.length / limit) !== page
+                                        ?
+                                        <span className='h-[40px] w-[40px] flex justify-center items-center rounded-full border-blue-200 border-2 cursor-pointer text-xl' onClick={() => setPage(prev => prev + 1)}>&rarr;</span>
+                                        :
+                                        ""
+                                }
+                            </div>
+                        </div>
+                        :
+                        <p className='text-center my-4 w-full'>No such jobs available.</p>
+                }
             </section>
         </main>
     )

@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import { features } from "@/data/features";
 import FeatureCard from "@/components/FeatureCard/FeatureCard";
@@ -6,8 +8,21 @@ import JobListItem from "@/components/JobListItem/JobListItem";
 import { jobs } from "@/data/Jobs";
 import { resources } from "@/data/resources";
 import ResourceCard from "@/components/ResourceCard/ResourceCard";
+import { useRef, useState } from "react";
 
 export default function Home() {
+  const [searchQuery, setSearchQuery] = useState<string>("")
+  const redirectLinkRef = useRef<HTMLAnchorElement | null>(null)
+
+  // search handler
+  const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (redirectLinkRef.current) {
+      redirectLinkRef.current.click()
+    }
+    setSearchQuery("")
+  }
+
   return (
     <main>
       {/* hero section */}
@@ -18,9 +33,10 @@ export default function Home() {
           <h3 className="text-[2rem] font-[600] leading-tight my-4 text-white">Linking Talent. Unlocking Potential.</h3>
           <p className="text-gray-200 mb-20">The ultimate job board connecting top talent with amazing opportunities. Our platform leverages cutting-edge technology and vast industry connections to match job seekers with their dream career and help companies find the perfect fit. Unlock your full potential today with SkillLink.</p>
           {/* search form */}
-          <form className="flex p-2 items-center border-blue-400 border-2 rounded-xl overflow-hidden bg-white">
-            <input type="text" placeholder="Search for jobs, talents, and more.." className="bg-transparent w-full outline-none text-lg pl-2" />
+          <form className="flex p-2 items-center border-blue-400 border-2 rounded-xl overflow-hidden bg-white" onSubmit={searchHandler}>
+            <input type="search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search for jobs, talents, and more.." className="bg-transparent w-full outline-none text-lg pl-2" />
             <button type="submit" className="bg-blue-500 text-white py-2 px-8 text-lg rounded">Search</button>
+            <Link href={{ pathname: "/jobs", query: { query: searchQuery } }} ref={redirectLinkRef} hidden></Link>
           </form>
         </div>
         {/* hero right */}
@@ -64,7 +80,7 @@ export default function Home() {
         <div className="flex flex-wrap gap-8 justify-center">
           {/* resource */}
           {
-            resources.slice(0, 6).map(resource => <ResourceCard resource={resource} />)
+            resources.slice(0, 6).map((resource, index) => <ResourceCard key={index} resource={resource} />)
           }
           <Link href={"/resources"} className="bg-blue-500 text-white py-4 px-12 text-lg rounded mt-10">See More</Link>
         </div>

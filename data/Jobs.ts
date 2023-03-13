@@ -288,6 +288,7 @@ export const jobs = [
             img: "https://res.cloudinary.com/dt2iy0zy8/image/upload/v1676887822/dmusos8oyhqplrvqaxsj.jpg",
             profile_link: ""
         },
+        title: "Data Scientist",
         slug: "data-scientist",
         description: `We are seeking a MERN Stack Developer with the following experience and skills:
 
