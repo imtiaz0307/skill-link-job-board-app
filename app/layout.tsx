@@ -1,6 +1,9 @@
+"use client"
+
 import Footer from '@/components/Footer/Footer'
 import Mailing from '@/components/MailingForm/Mailing'
 import Navbar from '@/components/Navbar/Navbar'
+import { usePathname } from 'next/navigation'
 import './globals.css'
 
 export default function RootLayout({
@@ -8,18 +11,24 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const pathname = usePathname()
+  console.log(pathname !== ("/auth/signup" || "/auth/login"))
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
       <body>
         <Navbar />
         {children}
-        <Mailing />
-        <Footer />
+        {
+          pathname !== "/auth/signup" && pathname !== "/auth/login"
+            ?
+            <>
+              <Mailing />
+              <Footer />
+            </>
+            :
+            null
+        }
       </body>
     </html>
   )
