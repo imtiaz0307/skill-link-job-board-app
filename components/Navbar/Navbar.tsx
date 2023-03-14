@@ -23,7 +23,7 @@ const Navbar = () => {
                     <Link href={"/contact"}>Contact Us</Link>
                 </li>
                 <li>
-                    <Link href={"/login"} className="bg-white text-blue-500 font-[600] py-3 px-10 rounded">Login</Link>
+                    <Link href={"/auth/login"} className="bg-white text-blue-500 font-[600] py-3 px-10 rounded">Login</Link>
                 </li>
             </ul>
         </nav>
