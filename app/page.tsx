@@ -17,6 +17,7 @@ export default function Home() {
   // search handler
   const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    if (!searchQuery) return;
     if (redirectLinkRef.current) {
       redirectLinkRef.current.click()
     }
@@ -34,7 +35,7 @@ export default function Home() {
           <p className="text-gray-200 mb-20">The ultimate job board connecting top talent with amazing opportunities. Our platform leverages cutting-edge technology and vast industry connections to match job seekers with their dream career and help companies find the perfect fit. Unlock your full potential today with SkillLink.</p>
           {/* search form */}
           <form className="flex p-2 items-center border-blue-400 border-2 rounded-xl overflow-hidden bg-white" onSubmit={searchHandler}>
-            <input type="search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search for jobs, talents, and more.." className="bg-transparent w-full outline-none text-lg pl-2" />
+            <input type="search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Enter the job title and see the magic..." className="bg-transparent w-full outline-none text-lg pl-2" />
             <button type="submit" className="bg-blue-500 text-white py-2 px-8 text-lg rounded">Search</button>
             <Link href={{ pathname: "/jobs", query: { query: searchQuery } }} ref={redirectLinkRef} hidden></Link>
           </form>
