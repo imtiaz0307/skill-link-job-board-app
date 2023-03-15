@@ -12,7 +12,6 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const pathname = usePathname()
-  console.log(pathname !== ("/auth/signup" || "/auth/login"))
   return (
     <html lang="en">
       <head />
