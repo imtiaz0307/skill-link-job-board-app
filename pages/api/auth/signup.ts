@@ -9,6 +9,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     // database coneection handler
     await dbConnection()
 
+    // if request method is not post
+    if (req.method !== "POST") return res.status(400).json({ error: "Only post requests are allowed." })
+
     try {
         // checking whether the username is available
         let user = await User.findOne({ username: req.body.username })
