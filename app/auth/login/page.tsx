@@ -26,6 +26,7 @@ const Login = () => {
         }
         if (data.success) {
             localStorage.setItem("auth-token", data.token)
+            window.location.href = "/"
         }
     }
     return (
