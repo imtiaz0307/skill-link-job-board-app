@@ -1,24 +1,10 @@
 "use client"
 
+import { User } from "@/types/User"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { HiUserCircle, HiOutlineUserCircle } from "react-icons/hi2"
-import { IoExitOutline } from "react-icons/io5"
-
-type User = {
-    _id: string,
-    applied_jobs: string[],
-    city: string,
-    createdAt: string,
-    date_of_birth: string,
-    email: string,
-    fullname: string,
-    interests: string[],
-    searched_keywords: string[],
-    skills: string[],
-    updatedAt: string[],
-    username: string
-}
+import { IoExitOutline, IoSettingsOutline } from "react-icons/io5"
 
 const Navbar = () => {
     const [authToken, setAuthToken] = useState<string>("")
@@ -30,6 +16,7 @@ const Navbar = () => {
         if (typeof window !== "undefined") {
             setAuthToken(localStorage.getItem("auth-token")!)
 
+            // getting current user
             fetch('/api/users/me', {
                 method: "GET",
                 headers: {
@@ -92,11 +79,17 @@ const Navbar = () => {
                                 {
                                     showProfileMenu
                                         ?
-                                        <ul className="absolute bg-white top-6 right-0 rounded-[10px] overflow-hidden">
+                                        <ul className="absolute bg-white top-6 right-0 rounded-[10px] overflow-hidden border-blue-200 border-2">
                                             <li>
-                                                <Link href={`/profile/${user?.username}`} className="py-4 px-4 border-b-blue-200 border-2 text-blue-500 flex items-center gap-2">
+                                                <Link href={`/profile/${user?.username}`} className="py-4 px-4 border-b-blue-200 border-b-2 text-blue-500 flex items-center gap-2">
                                                     <HiOutlineUserCircle fontSize={24} />
                                                     <span>Profile</span>
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href={`/profile/${user?.username}`} className="py-4 px-4 border-b-blue-200 border-b-2 text-blue-500 flex items-center gap-2">
+                                                    <IoSettingsOutline fontSize={24} />
+                                                    <span>Settings</span>
                                                 </Link>
                                             </li>
                                             <li>
