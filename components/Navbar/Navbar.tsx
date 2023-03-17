@@ -87,7 +87,7 @@ const Navbar = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link href={`/profile/${user?.username}`} className="py-4 px-4 border-b-blue-200 border-b-2 text-blue-500 flex items-center gap-2">
+                                                <Link href={`/settings`} className="py-4 px-4 border-b-blue-200 border-b-2 text-blue-500 flex items-center gap-2">
                                                     <IoSettingsOutline fontSize={24} />
                                                     <span>Settings</span>
                                                 </Link>

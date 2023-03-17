@@ -5,6 +5,7 @@ export type User = {
     createdAt: string,
     date_of_birth: string,
     email: string,
+    contact_number: string,
     fullname: string,
     interests: string[],
     searched_keywords: string[],
