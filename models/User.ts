@@ -32,6 +32,10 @@ const userSchema = new mongoose.Schema(
             type: Date,
             required: true
         },
+        resume: {
+            type: String,
+            default: ""
+        },
         interests: {
             type: Array,
             default: []

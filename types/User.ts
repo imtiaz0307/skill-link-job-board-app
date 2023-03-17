@@ -11,5 +11,6 @@ export type User = {
     searched_keywords: string[],
     skills: string[],
     updatedAt: string[],
-    username: string
+    username: string,
+    resume: string
 }

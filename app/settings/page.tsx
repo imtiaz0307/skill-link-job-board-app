@@ -4,6 +4,8 @@ import { cities } from "@/data/cities"
 import { User } from "@/types/User"
 import Link from "next/link"
 import { ChangeEvent, useEffect, useRef, useState } from "react"
+import { AiOutlineCloudUpload, AiOutlineFileDone } from "react-icons/ai"
+
 
 const Settings = () => {
     const redirectLinkRef = useRef<null | HTMLAnchorElement>(null)
@@ -13,6 +15,11 @@ const Settings = () => {
     const [skills, setSkills] = useState<string[]>([])
     const [interestName, setInterestName] = useState<string>("")
     const [interests, setInterests] = useState<string[]>([])
+    const [resume, setResume] = useState<String>("")
+    const [resumeDetails, setResumeDetails] = useState({
+        name: "",
+        size: ""
+    })
     const [data, setData] = useState({
         fullname: "",
         username: "",
@@ -71,7 +78,7 @@ const Settings = () => {
                 "Content-Type": "application/json",
                 "auth-token": authToken
             },
-            body: JSON.stringify({ ...data, skills, interests })
+            body: JSON.stringify({ ...data, skills, interests, resume })
         })
         const resData = await res.json()
         if (resData.success) {
@@ -140,6 +147,38 @@ const Settings = () => {
                 <div className={`${interests.length > 0 && "mt-4 flex flex-wrap gap-2"}`}>
                     {interests.map((interest, index) => <span key={index} className="px-4 py-2 border-blue-200 text-blue-500 border-2 rounded text-sm">{interest}</span>)}
                 </div>
+            </div>
+            <div>
+                {
+                    resumeDetails.name
+                        ?
+                        <Link href={`${resume}`} target="_blank" className="flex items-start rounded-[10px] bg-blue-400 p-4 my-8 text-white">
+                            <AiOutlineFileDone fontSize={64} color="white" />
+                            <p className="flex flex-col gap-3">
+                                <span className="text-[1.1rem] font-[600]">{resumeDetails.name}</span>
+                                <span className="text-sm">{resumeDetails.size}</span>
+                            </p>
+                        </Link>
+                        :
+                        <>
+                            <label htmlFor="resume" className="flex flex-col items-center cursor-pointer p-12 bg-blue-200 rounded-[10px] mx-auto w-fit my-8 text-[1.1rem]">
+                                <AiOutlineCloudUpload />
+                                <p>Upload New Resume</p>
+                            </label>
+                            <input type="file" accept="application/pdf" id="resume" onChange={async (e) => {
+                                const file = e.target.files?.[0]
+                                const reader = new FileReader()
+                                reader.readAsDataURL(file!)
+                                reader.onloadend = () => {
+                                    setResumeDetails({
+                                        name: file?.name || "",
+                                        size: `${(file?.size! / 1024).toFixed(1)}${file?.size! > 1000000 ? "mb" : "kb"}` || ""
+                                    })
+                                    setResume(reader.result as string)
+                                }
+                            }} hidden />
+                        </>
+                }
             </div>
             <div className="flex justify-end gap-4 w-full mt-8">
                 <Link href={`/profile/${user?.username}`} className="px-8 py-2 border-blue-200 border-2 rounded text-blue-500">Cancel</Link>
