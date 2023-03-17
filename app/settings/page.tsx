@@ -2,11 +2,17 @@
 
 import { cities } from "@/data/cities"
 import { User } from "@/types/User"
-import { ChangeEvent, useEffect, useState } from "react"
+import Link from "next/link"
+import { ChangeEvent, useEffect, useRef, useState } from "react"
 
 const Settings = () => {
+    const redirectLinkRef = useRef<null | HTMLAnchorElement>(null)
     const [authToken, setAuthToken] = useState<string>("")
     const [user, setUser] = useState<User | null>(null)
+    const [skillName, setSkillName] = useState<string>("")
+    const [skills, setSkills] = useState<string[]>([])
+    const [interestName, setInterestName] = useState<string>("")
+    const [interests, setInterests] = useState<string[]>([])
     const [data, setData] = useState({
         fullname: "",
         username: "",
@@ -30,7 +36,7 @@ const Settings = () => {
                 .then(res => res.json())
                 .then(resData => {
                     setUser(resData)
-                    const { fullname, username, email, contact_number, city } = resData
+                    const { fullname, username, email, contact_number, city, skills: userSkills, interests: userInterests } = resData
                     setData({
                         fullname,
                         username,
@@ -38,6 +44,8 @@ const Settings = () => {
                         contact_number,
                         city
                     })
+                    setSkills(userSkills)
+                    setInterests(userInterests)
                 })
                 .catch(err => console.log(err))
         }
@@ -55,9 +63,25 @@ const Settings = () => {
         })
     }
 
+    // update profile handler
+    const editProfileHandler = async () => {
+        const res = await fetch(`/api/users/id/${user?._id}/edit`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": authToken
+            },
+            body: JSON.stringify({ ...data, skills, interests })
+        })
+        const resData = await res.json()
+        if (resData.success) {
+            redirectLinkRef.current?.click()
+        }
+    }
+
 
     return (
-        <main className="max-w-[700px] mx-auto flex flex-col gap-6 py-16">
+        <main className="max-w-[700px] mx-auto flex flex-col gap-6 py-16 px-4">
             <h2 className="text-blue-500 text-[2rem] font-[700] text-center mb-12">Update Profile</h2>
             <div className="flex flex-col gap-2">
                 <label className="cursor-pointer text-blue-500 font-[600]" htmlFor="fullname">Change Name</label>
@@ -83,23 +107,44 @@ const Settings = () => {
                     }
                 </select>
             </div>
-            <form className="flex gap-4 items-end">
-                <div className="flex flex-col gap-2 flex-1">
-                    <label className="cursor-pointer text-blue-500 font-[600]" htmlFor="skills">Add Skills</label>
-                    <input className="py-2 px-4 bg-transparent border-blue-200 border-2 rounded outline-none" type="text" id="skills" />
+            <div>
+                <form className="flex gap-4 items-end" onSubmit={(e) => {
+                    e.preventDefault()
+                    if (!skillName) return
+                    setSkills(prev => [...prev, skillName])
+                    setSkillName("")
+                }}>
+                    <div className="flex flex-col gap-2 flex-1">
+                        <label className="cursor-pointer text-blue-500 font-[600]" htmlFor="skills">Add Skills</label>
+                        <input className="py-2 px-4 bg-transparent border-blue-200 border-2 rounded outline-none" type="text" id="skills" value={skillName} onChange={(e) => setSkillName(e.target.value)} />
+                    </div>
+                    <button className="py-2 px-4 bg-blue-500 text-white rounded border-2 border-blue-500" type="submit">Add</button>
+                </form>
+                <div className={`${skills.length > 0 && "mt-4 flex flex-wrap gap-2"}`}>
+                    {skills.map((skill, index) => <span key={index} className="px-4 py-2 border-blue-200 text-blue-500 border-2 rounded text-sm">{skill}</span>)}
                 </div>
-                <button className="py-2 px-4 bg-blue-500 text-white rounded border-2 border-blue-500" type="submit">Add</button>
-            </form>
-            <form className="flex gap-4 items-end">
-                <div className="flex flex-col gap-2 flex-1">
-                    <label className="cursor-pointer text-blue-500 font-[600]" htmlFor="interests">Add Interests</label>
-                    <input className="py-2 px-4 bg-transparent border-blue-200 border-2 rounded outline-none" type="text" id="interests" />
+            </div>
+            <div>
+                <form className="flex gap-4 items-end" onSubmit={(e) => {
+                    e.preventDefault()
+                    if (!interestName) return
+                    setInterests(prev => [...prev, interestName])
+                    setInterestName("")
+                }}>
+                    <div className="flex flex-col gap-2 flex-1">
+                        <label className="cursor-pointer text-blue-500 font-[600]" htmlFor="interests">Add Interests</label>
+                        <input className="py-2 px-4 bg-transparent border-blue-200 border-2 rounded outline-none" type="text" id="interests" value={interestName} onChange={(e) => setInterestName(e.target.value)} />
+                    </div>
+                    <button className="py-2 px-4 bg-blue-500 text-white rounded border-2 border-blue-500" type="submit">Add</button>
+                </form>
+                <div className={`${interests.length > 0 && "mt-4 flex flex-wrap gap-2"}`}>
+                    {interests.map((interest, index) => <span key={index} className="px-4 py-2 border-blue-200 text-blue-500 border-2 rounded text-sm">{interest}</span>)}
                 </div>
-                <button className="py-2 px-4 bg-blue-500 text-white rounded border-2 border-blue-500" type="submit">Add</button>
-            </form>
+            </div>
             <div className="flex justify-end gap-4 w-full mt-8">
-                <button className="px-8 py-2 border-blue-500 border-2 rounded text-blue-500">Cancel</button>
-                <button className="px-8 py-2 border-blue-500 border-2 text-white bg-blue-500 rounded">Save Changes</button>
+                <Link href={`/profile/${user?.username}`} className="px-8 py-2 border-blue-200 border-2 rounded text-blue-500">Cancel</Link>
+                <button className="px-8 py-2 border-blue-500 border-2 text-white bg-blue-500 rounded" onClick={editProfileHandler}>Save Changes</button>
+                <Link href={`/profile/${data?.username}`} hidden ref={redirectLinkRef}></Link>
             </div>
         </main>
     )
