@@ -31,7 +31,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         res.status(200).json({ token, success: "User logged in successfully." })
     } catch (error) {
-        res.status(500).json({ error: "Internal server error." })
+        return res.status(500).json({ error: "Internal server error." })
     }
 }
 
