@@ -1,12 +1,12 @@
-import { jobs } from "@/data/Jobs";
 import Link from "next/link";
 import { FcMoneyTransfer } from 'react-icons/fc'
 import { MdLocationPin } from "react-icons/md"
 import { BsFillBriefcaseFill, BsCalendar2XFill } from "react-icons/bs"
 import { TbBulb } from "react-icons/tb"
 import { GrUserWorker } from "react-icons/gr"
-import Image from "next/image";
+// import Image from "next/image";
 import JobListItem from "@/components/JobListItem/JobListItem";
+import { JobItem } from "@/types/Job";
 
 type Param = {
     params: {
@@ -14,9 +14,13 @@ type Param = {
     }
 }
 
-const JobPage = ({ params }: Param) => {
+const JobPage = async ({ params }: Param) => {
     const { slug } = params;
-    const job = jobs.filter(job => job.slug === slug)[0]
+    const response = await fetch(`http://localhost:3000/api/jobs/${slug}`)
+    const job: JobItem = await response.json()
+    const jobsRes = await fetch(`http://localhost:3000/api/jobs`)
+    const jobs: JobItem[] = await jobsRes.json()
+
 
     // job experience converter
     const jobEperienceString = (experience: number) => {
@@ -32,11 +36,11 @@ const JobPage = ({ params }: Param) => {
             <section className="px-12 py-10 flex gap-4">
                 <div className="p-4 border-blue-200 border-2 rounded-[10px] max-w-[500px] min-w-[300px] flex-1">
                     {/* job title */}
-                    <h1 className="text-[2rem] font-[600] text-blue-500">{job.title}</h1>
+                    <h1 className="text-[2rem] font-[600] text-blue-500">{job.job_title}</h1>
                     {/* company and experience details */}
                     <h2>
                         <span>at </span>
-                        <Link href={""} className="underline font-[600]">{job.company}</Link>
+                        <Link href={""} className="underline font-[600]">{job.company_title}</Link>
                         <span className="text-sm"> {`(${jobEperienceString(job.experience)})`}</span>
                     </h2>
                     {/* other job details */}
@@ -47,7 +51,7 @@ const JobPage = ({ params }: Param) => {
                         </p>
                         <p className="flex gap-1 items-center">
                             <MdLocationPin className="text-blue-500" />
-                            <span>Location: {job.location}</span>
+                            <span>Location: {job.city}</span>
                         </p>
                         <p className="flex gap-1 items-center">
                             <BsFillBriefcaseFill className="text-blue-500" />
@@ -59,11 +63,11 @@ const JobPage = ({ params }: Param) => {
                         </p>
                         <p className="flex gap-1 items-center">
                             <TbBulb className="text-orange-500" />
-                            <span>Skills : {job.skills_required.map(skill => `${skill}, `)}</span>
+                            <span>Skills : {job.skills_required.map((skill, index) => `${skill}${index !== job.skills_required.length - 1 ? "," : "."} `)}</span>
                         </p>
                         <p className="flex gap-1 items-center">
                             <GrUserWorker />
-                            <span>{job.applicants} candidates have already applied.</span>
+                            <span>{job.applications?.length!} candidates have already applied.</span>
                         </p>
                     </div>
                     {/* button */}
@@ -72,13 +76,13 @@ const JobPage = ({ params }: Param) => {
                         <button className="border-blue-500 border-[1px] bor text-blue-500 py-2 px-6 text-sm rounded">Save</button>
                     </div>
                     {/* recruiter */}
-                    <div className="flex gap-2 items-center p-2 border-blue-200 border-2 rounded-[10px]">
+                    {/* <div className="flex gap-2 items-center p-2 border-blue-200 border-2 rounded-[10px]">
                         <Image className="rounded-full h-[40px] w-[40px] object-cover" src={job.author.img} alt={job.author.name} width={60} height={60} />
                         <p className="flex flex-col leading-none gap-2">
                             <Link href={""}>{job.author.name}</Link>
                             <span className="text-[12px]">is recruiting.</span>
                         </p>
-                    </div>
+                    </div> */}
                     {/* job description */}
                     <div className="p-2">
                         <h2 className="text-lg font-[600] underline mb-2">Job Description:</h2>
@@ -89,7 +93,7 @@ const JobPage = ({ params }: Param) => {
                     <h2 className="text-[2.5rem] font-[600] text-blue-500 text-center mb-8">Related Jobs</h2>
                     <div className="flex flex-col gap-4">
                         {
-                            jobs.filter(curJob => curJob.slug !== slug).slice(0, 5).map((job, index) => <JobListItem key={index} job={{ title: job.title as string, salary_range: job.salary_range, location: job.location, job_type: job.job_type, deadline: job.deadline, slug: job.slug }} />)
+                            jobs.filter(curJob => curJob.slug !== slug).slice(0, 5).map((job, index) => <JobListItem key={index} job={job} />)
                         }
                     </div>
                 </div>
