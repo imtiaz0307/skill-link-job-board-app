@@ -2,89 +2,68 @@
 
 import Filter from '@/components/Filter/Filter'
 import JobListItem from '@/components/JobListItem/JobListItem'
-import { jobs } from '@/data/Jobs'
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
-type Jobs = {
-    company: string,
-    author: {
-        name: string,
-        img: string,
-        profile_link: string
-    },
-    title: string,
-    slug: string,
-    description: string,
-    vacancies: number,
-    location: string,
-    job_type: string,
-    applicants: number,
-    skills_required: string[],
-    experience: number,
-    salary_range: {
-        from: number,
-        to: number,
-    },
-    deadline: string,
-}
-
-
 const Jobs = () => {
+    const [jobs, setJobs] = useState([])
     const [page, setPage] = useState<number>(1)
     const [limit, setLimit] = useState<number>(10)
     const [searchQuery, setSearchQuery] = useState<string>("")
     const [searchCity, setSearchCity] = useState<string>("")
-    const [jobsToShow, setJobsToShow] = useState<Jobs[]>([])
+    // const [jobsToShow, setJobsToShow] = useState<Jobs[]>([])
     const search = useSearchParams()
     const query = search?.get("query")
 
     // filtering jobs by the homepage's search query
     useEffect(() => {
-        if (query) {
-            const filteredJobs: Jobs[] = jobs.filter((job): job is Jobs & { title: string } => {
-                return job.title.toLowerCase().includes(query)
-                    ||
-                    job.slug.toLowerCase().includes(query)
-            });
-            setJobsToShow(filteredJobs)
-        } else {
-            setJobsToShow(jobs)
-        }
+        fetch('api/jobs')
+            .then(res => res.json())
+            .then(data => setJobs(data))
+        // if (query) {
+        //     const filteredJobs: Jobs[] = jobs.filter((job): job is Jobs & { title: string } => {
+        //         return job.title.toLowerCase().includes(query)
+        //             ||
+        //             job.slug.toLowerCase().includes(query)
+        //     });
+        //     setJobsToShow(filteredJobs)
+        // } else {
+        //     setJobsToShow(jobs)
+        // }
     }, [])
 
     // search handler
-    const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
+    // const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    //     e.preventDefault()
 
-        // if no search query and search city
-        if (!searchQuery && !searchCity) return;
+    //     // if no search query and search city
+    //     if (!searchQuery && !searchCity) return;
 
-        // filtering the searched jobs as per the input fields
-        const filterredJobs: Jobs[] = jobs.filter(job => {
-            // if user searched for both city and job
-            if (searchQuery && searchCity) {
-                return job.location.toLowerCase().includes(searchCity)
-                    &&
-                    (
-                        job.title.toLowerCase().includes(searchQuery)
-                        ||
-                        job.slug.toLowerCase().includes(searchQuery)
-                    )
-            }
-            // if user only searched for job
-            else if (searchQuery && !searchCity) {
-                return job.title.toLowerCase().includes(searchQuery)
-                    ||
-                    job.slug.toLowerCase().includes(searchQuery)
-            }
-            // if user only searched for city
-            else if (!searchQuery && searchCity) {
-                return job.location.toLowerCase().includes(searchCity)
-            }
-        })
-        setJobsToShow(filterredJobs)
-    }
+    //     // filtering the searched jobs as per the input fields
+    //     const filterredJobs: Jobs[] = jobs.filter(job => {
+    //         // if user searched for both city and job
+    //         if (searchQuery && searchCity) {
+    //             return job.location.toLowerCase().includes(searchCity)
+    //                 &&
+    //                 (
+    //                     job.title.toLowerCase().includes(searchQuery)
+    //                     ||
+    //                     job.slug.toLowerCase().includes(searchQuery)
+    //                 )
+    //         }
+    //         // if user only searched for job
+    //         else if (searchQuery && !searchCity) {
+    //             return job.title.toLowerCase().includes(searchQuery)
+    //                 ||
+    //                 job.slug.toLowerCase().includes(searchQuery)
+    //         }
+    //         // if user only searched for city
+    //         else if (!searchQuery && searchCity) {
+    //             return job.location.toLowerCase().includes(searchCity)
+    //         }
+    //     })
+    //     setJobsToShow(filterredJobs)
+    // }
 
     return (
         <main>
@@ -93,7 +72,7 @@ const Jobs = () => {
                 <h2 className='text-[4rem] font-[600] text-white'>Search Jobs!</h2>
                 <p className='text-center mb-16 text-[1.5rem] text-gray-200'>Enter the job title and city we will find the best for you!</p>
                 {/* search form */}
-                <form className='flex items-end gap-4 max-w-[1000px] mx-auto bg-white rounded-[10px] p-4' onSubmit={searchHandler}>
+                <form className='flex items-end gap-4 max-w-[1000px] mx-auto bg-white rounded-[10px] p-4' /*onSubmit={searchHandler}*/>
                     <div className='flex flex-col gap-2 text-left flex-1'>
                         <label htmlFor="jobTitle" className='pl-1 cursor-pointer text-blue-500 font-[600]'>Job Title</label>
                         <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} type="search" placeholder='Ex: Software Engineer' id="jobTitle" className='border-blue-200 border-2 p-2 rounded-[10px] outline-none' />
@@ -122,11 +101,11 @@ const Jobs = () => {
                     <Filter filterTitles={["Posted At", "Today", "A week ago", "A month ago", "More than a month ago"]} />
                 </div>
                 {
-                    jobsToShow.length > 0
+                    jobs.length > 0
                         ?
                         <div className='flex-1 flex flex-col gap-6 items-center'>
                             {
-                                jobsToShow.slice(page * limit - limit, page * limit).map((job, index) => <JobListItem key={index} job={{ title: job.title as string, salary_range: job.salary_range, location: job.location, job_type: job.job_type, deadline: job.deadline, slug: job.slug }} />)
+                                jobs.slice(page * limit - limit, page * limit).map((job, index) => <JobListItem key={index} job={job} />)
                             }
                             <div className='flex items-center gap-2'>
                                 {
@@ -137,12 +116,14 @@ const Jobs = () => {
                                         ""
                                 }
                                 {
-                                    [...Array(Math.ceil(jobsToShow.length / limit))].map((_, index) => {
+                                    jobs.length > 10
+                                    &&
+                                    [...Array(Math.ceil(jobs.length / limit))].map((_, index) => {
                                         return <span className={`h-[40px] w-[40px] flex justify-center items-center rounded-full border-blue-200 border-2 cursor-pointer ${index + 1 === page ? "bg-blue-500 text-white" : ""}`} key={index} onClick={() => setPage(index + 1)}>{index + 1}</span>
                                     })
                                 }
                                 {
-                                    jobsToShow.length > 10 && Math.ceil(jobs.length / limit) !== page
+                                    jobs.length > 10 && Math.ceil(jobs.length / limit) !== page
                                         ?
                                         <span className='h-[40px] w-[40px] flex justify-center items-center rounded-full border-blue-200 border-2 cursor-pointer text-xl' onClick={() => setPage(prev => prev + 1)}>&rarr;</span>
                                         :

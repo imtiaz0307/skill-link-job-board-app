@@ -12,6 +12,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         // converting the deadline string to date
         req.body.deadline = new Date(req.body.deadline)
+
         // creating new job
         const job = await Job.create(req.body)
         await job.save()

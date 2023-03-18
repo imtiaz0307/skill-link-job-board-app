@@ -5,14 +5,22 @@ import { features } from "@/data/features";
 import FeatureCard from "@/components/FeatureCard/FeatureCard";
 import Link from "next/link";
 import JobListItem from "@/components/JobListItem/JobListItem";
-import { jobs } from "@/data/Jobs";
 import { resources } from "@/data/resources";
 import ResourceCard from "@/components/ResourceCard/ResourceCard";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { JobItem } from "@/types/Job";
 
 export default function Home() {
+  const [jobs, setJobs] = useState<JobItem[]>([])
   const [searchQuery, setSearchQuery] = useState<string>("")
   const redirectLinkRef = useRef<HTMLAnchorElement | null>(null)
+
+  // getting all the jobs
+  useEffect(() => {
+    fetch('api/jobs')
+      .then(res => res.json())
+      .then(data => setJobs(data))
+  }, [])
 
   // search handler
   const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
@@ -68,7 +76,9 @@ export default function Home() {
         <div className="flex flex-col items-center w-full gap-8">
           {/* job */}
           {
-            jobs.slice(0, 10).map((job, index) => <JobListItem key={index} job={{ title: job.title as string, salary_range: job.salary_range, location: job.location, job_type: job.job_type, deadline: job.deadline, slug: job.slug }} />)
+            jobs.length > 0
+            &&
+            jobs.slice(0, 10).map((job, index) => <JobListItem key={index} job={job} />)
           }
         </div>
         <Link href={"/jobs"} className="bg-blue-500 text-white py-4 px-12 text-lg rounded mt-10">See More</Link>
