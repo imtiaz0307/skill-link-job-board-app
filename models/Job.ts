@@ -21,7 +21,8 @@ const jobSchema = new Schema(
         },
         slug: {
             type: String,
-            required: true
+            required: true,
+            unique: true
         },
         vacancies: {
             type: Number,

@@ -14,6 +14,7 @@ type Candidate = {
 }
 
 export type JobItem = {
+    _id: string,
     job_title: string;
     company_title: string;
     description: string;

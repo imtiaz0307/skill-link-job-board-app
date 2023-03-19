@@ -1,7 +1,6 @@
 "use client"
 
 import { User } from "@/types/User"
-import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { AiOutlineFileDone } from "react-icons/ai"

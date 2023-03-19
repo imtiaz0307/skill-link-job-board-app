@@ -11,9 +11,8 @@ const Jobs = () => {
     const [jobs, setJobs] = useState([])
     const [page, setPage] = useState<number>(1)
     const [limit, setLimit] = useState<number>(10)
-    const [searchQuery, setSearchQuery] = useState<string>(query as string)
+    const [searchQuery, setSearchQuery] = useState<string>(query as string || "")
     const [searchCity, setSearchCity] = useState<string>("")
-    // const [jobsToShow, setJobsToShow] = useState<Jobs[]>([])
 
     // filtering jobs by the homepage's search query
     useEffect(() => {
@@ -58,8 +57,6 @@ const Jobs = () => {
                     <Filter filterTitles={["Salary Range", "10,000 - 30,000", "30,000 - 50,000", "50,000 - 100,000", "100,000+"]} />
                     {/* job type filter */}
                     <Filter filterTitles={["Job Type", "Remote", "On-site", "Hybrid"]} />
-                    {/* location filter */}
-                    {/* <Filter filterTitles={["Location", "Punjab", "Sindh", "Balochistan", "KPK", "AJK"]} /> */}
                     {/* experience level filter */}
                     <Filter filterTitles={["Experience Level", "Intern", "Entry Level (0-2 years)", "Mid Level (2-5 years)", "Senior Level (5+ years)"]} />
                     {/* posted at filter */}

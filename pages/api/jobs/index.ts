@@ -7,18 +7,22 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     await dbConnection()
 
     try {
-        const { job_title, city, salaray_range, job_type, experience, createdAt } = req.query
-        const searchQuery = {}
-        let jobs = await Job.find(searchQuery)
+        // destructuring items from request query
+        const { job_title, city } = req.query
 
-        console.log(job_title, city)
+        let jobs = await Job.find()
 
+        // job search functionality by job title and city
         jobs = jobs.filter(job => {
+            // if user search for specific jobs from specific city
             if (job_title && city) {
                 return job.job_title.toLowerCase().includes(String(job_title).toLowerCase()) && job.city.toLowerCase().includes(String(city).toLowerCase());
             }
+            // if user only search for jobs titles
             if (job_title && !city) return job.job_title.toLowerCase().includes(String(job_title).toLowerCase());
+            // if user only search for jobs from a specific city
             if (!job_title && city) return job.city.toLowerCase().includes(String(city).toLowerCase());
+            // if there is no search query
             return jobs
         })
 
