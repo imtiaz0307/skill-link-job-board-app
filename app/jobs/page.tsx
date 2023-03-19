@@ -3,67 +3,32 @@
 import Filter from '@/components/Filter/Filter'
 import JobListItem from '@/components/JobListItem/JobListItem'
 import { useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 
 const Jobs = () => {
+    const search = useSearchParams()
+    const query = search?.get("query")
     const [jobs, setJobs] = useState([])
     const [page, setPage] = useState<number>(1)
     const [limit, setLimit] = useState<number>(10)
-    const [searchQuery, setSearchQuery] = useState<string>("")
+    const [searchQuery, setSearchQuery] = useState<string>(query as string)
     const [searchCity, setSearchCity] = useState<string>("")
     // const [jobsToShow, setJobsToShow] = useState<Jobs[]>([])
-    const search = useSearchParams()
-    const query = search?.get("query")
 
     // filtering jobs by the homepage's search query
     useEffect(() => {
-        fetch('api/jobs')
+        fetch(`api/jobs${query ? `?job_title=${query}` : ""}`)
             .then(res => res.json())
             .then(data => setJobs(data))
-        // if (query) {
-        //     const filteredJobs: Jobs[] = jobs.filter((job): job is Jobs & { title: string } => {
-        //         return job.title.toLowerCase().includes(query)
-        //             ||
-        //             job.slug.toLowerCase().includes(query)
-        //     });
-        //     setJobsToShow(filteredJobs)
-        // } else {
-        //     setJobsToShow(jobs)
-        // }
     }, [])
 
     // search handler
-    // const searchHandler = (e: React.FormEvent<HTMLFormElement>) => {
-    //     e.preventDefault()
-
-    //     // if no search query and search city
-    //     if (!searchQuery && !searchCity) return;
-
-    //     // filtering the searched jobs as per the input fields
-    //     const filterredJobs: Jobs[] = jobs.filter(job => {
-    //         // if user searched for both city and job
-    //         if (searchQuery && searchCity) {
-    //             return job.location.toLowerCase().includes(searchCity)
-    //                 &&
-    //                 (
-    //                     job.title.toLowerCase().includes(searchQuery)
-    //                     ||
-    //                     job.slug.toLowerCase().includes(searchQuery)
-    //                 )
-    //         }
-    //         // if user only searched for job
-    //         else if (searchQuery && !searchCity) {
-    //             return job.title.toLowerCase().includes(searchQuery)
-    //                 ||
-    //                 job.slug.toLowerCase().includes(searchQuery)
-    //         }
-    //         // if user only searched for city
-    //         else if (!searchQuery && searchCity) {
-    //             return job.location.toLowerCase().includes(searchCity)
-    //         }
-    //     })
-    //     setJobsToShow(filterredJobs)
-    // }
+    const searchHandler = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        fetch(`api/jobs?${searchQuery && `job_title=${searchQuery}&`}${searchCity && `city=${searchCity}`}`)
+            .then(res => res.json())
+            .then(data => setJobs(data))
+    }
 
     return (
         <main>
@@ -72,7 +37,7 @@ const Jobs = () => {
                 <h2 className='text-[4rem] font-[600] text-white'>Search Jobs!</h2>
                 <p className='text-center mb-16 text-[1.5rem] text-gray-200'>Enter the job title and city we will find the best for you!</p>
                 {/* search form */}
-                <form className='flex items-end gap-4 max-w-[1000px] mx-auto bg-white rounded-[10px] p-4' /*onSubmit={searchHandler}*/>
+                <form className='flex items-end gap-4 max-w-[1000px] mx-auto bg-white rounded-[10px] p-4' onSubmit={searchHandler}>
                     <div className='flex flex-col gap-2 text-left flex-1'>
                         <label htmlFor="jobTitle" className='pl-1 cursor-pointer text-blue-500 font-[600]'>Job Title</label>
                         <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} type="search" placeholder='Ex: Software Engineer' id="jobTitle" className='border-blue-200 border-2 p-2 rounded-[10px] outline-none' />
@@ -94,7 +59,7 @@ const Jobs = () => {
                     {/* job type filter */}
                     <Filter filterTitles={["Job Type", "Remote", "On-site", "Hybrid"]} />
                     {/* location filter */}
-                    <Filter filterTitles={["Location", "Punjab", "Sindh", "Balochistan", "KPK", "AJK"]} />
+                    {/* <Filter filterTitles={["Location", "Punjab", "Sindh", "Balochistan", "KPK", "AJK"]} /> */}
                     {/* experience level filter */}
                     <Filter filterTitles={["Experience Level", "Intern", "Entry Level (0-2 years)", "Mid Level (2-5 years)", "Senior Level (5+ years)"]} />
                     {/* posted at filter */}
