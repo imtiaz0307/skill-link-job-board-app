@@ -1,9 +1,3 @@
-enum Job_Type {
-    "Remote",
-    "On-site",
-    "Hybrid"
-}
-
 type Candidate = {
     resume: string,
     name: string,
@@ -22,7 +16,7 @@ export type JobItem = {
     vacancies: number;
     city: string;
     experience: number;
-    job_type: Job_Type;
+    job_type: string;
     applications: Candidate[] | [];
     skills_required: string[];
     salary_range: {

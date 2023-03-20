@@ -2,6 +2,7 @@
 
 import Filter from '@/components/Filter/Filter'
 import JobListItem from '@/components/JobListItem/JobListItem'
+import { JobItem } from '@/types/Job'
 import { useSearchParams } from 'next/navigation'
 import { FormEvent, useEffect, useState } from 'react'
 
@@ -9,6 +10,7 @@ const Jobs = () => {
     const search = useSearchParams()
     const query = search?.get("query")
     const [jobs, setJobs] = useState([])
+    const [filteredJobs, setFilteredJobs] = useState<JobItem[] | []>([])
     const [page, setPage] = useState<number>(1)
     const [limit, setLimit] = useState<number>(10)
     const [searchQuery, setSearchQuery] = useState<string>(query as string || "")
@@ -19,6 +21,7 @@ const Jobs = () => {
         const getJobs = async () => {
             const response = await fetch(`api/jobs${query ? `?job_title=${query}` : ""}`)
             const data = await response.json()
+            setFilteredJobs(data)
             setJobs(data)
         }
         getJobs()
@@ -57,20 +60,20 @@ const Jobs = () => {
                 {/* filters */}
                 <div className='flex flex-col gap-4  bg-gradient-to-r from-sky-500 to-indigo-500  max-w-[250px] px-4 py-8 rounded-[10px] h-fit sticky top-[1rem]'>
                     {/* salary range filter */}
-                    <Filter filterTitles={["Salary Range", "10,000 - 30,000", "30,000 - 50,000", "50,000 - 100,000", "100,000+"]} />
+                    <Filter filterTitles={["Salary Range", "10,000 - 30,000", "30,000 - 50,000", "50,000 - 100,000", "100,000+"]} jobs={jobs} setFilteredJobs={setFilteredJobs} name="salary_range" />
                     {/* job type filter */}
-                    <Filter filterTitles={["Job Type", "Remote", "On-site", "Hybrid"]} />
+                    <Filter filterTitles={["Job Type", "Remote", "On-site", "Hybrid"]} jobs={jobs} setFilteredJobs={setFilteredJobs} name="job_type" />
                     {/* experience level filter */}
-                    <Filter filterTitles={["Experience Level", "Intern", "Entry Level (0-2 years)", "Mid Level (2-5 years)", "Senior Level (5+ years)"]} />
+                    <Filter filterTitles={["Experience", "Entry Level (0-2 years)", "Mid Level (2-5 years)", "Senior Level (5+ years)"]} jobs={jobs} setFilteredJobs={setFilteredJobs} name="experience" />
                     {/* posted at filter */}
-                    <Filter filterTitles={["Posted At", "Today", "A week ago", "A month ago", "More than a month ago"]} />
+                    <Filter filterTitles={["Posted At", "Today", "A week ago", "A month ago", "More than a month ago"]} jobs={jobs} setFilteredJobs={setFilteredJobs} name="posted_at" />
                 </div>
                 {
-                    jobs.length > 0
+                    filteredJobs.length > 0
                         ?
                         <div className='flex-1 flex flex-col gap-6 items-center'>
                             {
-                                jobs.slice(page * limit - limit, page * limit).map((job, index) => <JobListItem key={index} job={job} />)
+                                filteredJobs.slice(page * limit - limit, page * limit).map((job, index) => <JobListItem key={index} job={job} />)
                             }
                             <div className='flex items-center gap-2'>
                                 {
@@ -81,14 +84,14 @@ const Jobs = () => {
                                         ""
                                 }
                                 {
-                                    jobs.length > 10
+                                    filteredJobs.length > 10
                                     &&
-                                    [...Array(Math.ceil(jobs.length / limit))].map((_, index) => {
+                                    [...Array(Math.ceil(filteredJobs.length / limit))].map((_, index) => {
                                         return <span className={`h-[40px] w-[40px] flex justify-center items-center rounded-full border-blue-200 border-2 cursor-pointer ${index + 1 === page ? "bg-blue-500 text-white" : ""}`} key={index} onClick={() => setPage(index + 1)}>{index + 1}</span>
                                     })
                                 }
                                 {
-                                    jobs.length > 10 && Math.ceil(jobs.length / limit) !== page
+                                    filteredJobs.length > 10 && Math.ceil(filteredJobs.length / limit) !== page
                                         ?
                                         <span className='h-[40px] w-[40px] flex justify-center items-center rounded-full border-blue-200 border-2 cursor-pointer text-xl' onClick={() => setPage(prev => prev + 1)}>&rarr;</span>
                                         :
