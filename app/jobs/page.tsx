@@ -32,7 +32,10 @@ const Jobs = () => {
         e.preventDefault()
         fetch(`api/jobs?${searchQuery && `job_title=${searchQuery}&`}${searchCity && `city=${searchCity}`}`)
             .then(res => res.json())
-            .then(data => setJobs(data))
+            .then(data => {
+                setFilteredJobs(data)
+                setJobs(data)
+            })
     }
 
     return (
