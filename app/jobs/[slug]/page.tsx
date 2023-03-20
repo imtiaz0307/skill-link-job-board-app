@@ -19,14 +19,18 @@ type Param = {
 }
 
 const JobPage = ({ params }: Param) => {
+    const [refresh, setRefresh] = useState<Number>(0)
     const [job, setJob] = useState<JobItem | null>(null)
     const [jobs, setJobs] = useState<JobItem[] | []>([])
     const { slug } = params;
+
     useEffect(() => {
         fetch(`/api/jobs/${slug}`)
             .then(res => res.json())
             .then(data => setJob(data))
+    }, [refresh])
 
+    useEffect(() => {
         fetch('/api/jobs')
             .then(res => res.json())
             .then(data => setJobs(data))
@@ -74,7 +78,7 @@ const JobPage = ({ params }: Param) => {
                             </p>
                             <p className="flex gap-1 items-center">
                                 <BsCalendar2XFill className="text-red-500" />
-                                <span>Apply before: {job?.deadline}</span>
+                                <span>Apply before: {new Date(job?.deadline).toLocaleDateString()}</span>
                             </p>
                             <p className="flex gap-1 items-center">
                                 <TbBulb className="text-orange-500" />
@@ -87,8 +91,7 @@ const JobPage = ({ params }: Param) => {
                         </div>
                         {/* button */}
                         <div className="flex items-center gap-4 mt-4 mb-8 px-4">
-                            <ApplyToJob slug={slug} job_id={job._id} />
-                            <button className="border-blue-500 border-[1px] bor text-blue-500 py-2 px-6 text-sm rounded">Save</button>
+                            <ApplyToJob slug={slug} setRefresh={setRefresh} refresh={refresh} />
                         </div>
                         {/* recruiter */}
                         {/* <div className="flex gap-2 items-center p-2 border-blue-200 border-2 rounded-[10px]">

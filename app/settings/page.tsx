@@ -43,7 +43,7 @@ const Settings = () => {
                 .then(res => res.json())
                 .then(resData => {
                     setUser(resData)
-                    const { fullname, username, email, contact_number, city, skills: userSkills, interests: userInterests } = resData
+                    const { fullname, username, email, contact_number, resume: userResume, city, skills: userSkills, interests: userInterests } = resData
                     setData({
                         fullname,
                         username,
@@ -53,6 +53,7 @@ const Settings = () => {
                     })
                     setSkills(userSkills)
                     setInterests(userInterests)
+                    setResume(userResume)
                 })
                 .catch(err => console.log(err))
         }

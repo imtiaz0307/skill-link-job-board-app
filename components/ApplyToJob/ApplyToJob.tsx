@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { AiOutlineFileDone } from "react-icons/ai"
 
-const ApplyToJob = ({ slug, job_id }: { slug: string, job_id: string }) => {
+const ApplyToJob = ({ slug, setRefresh, refresh }: { slug: string, setRefresh: (prev: any) => void, refresh: Number }) => {
     const [user, setUser] = useState<User | null>(null)
     const [showModal, setShowModal] = useState<boolean>(false)
 
@@ -24,7 +24,7 @@ const ApplyToJob = ({ slug, job_id }: { slug: string, job_id: string }) => {
                 .then(data => setUser(data))
                 .catch(err => console.log(err))
         }
-    }, [])
+    }, [refresh])
 
     // apply to job handler
     const applyToJob = async () => {
@@ -43,18 +43,37 @@ const ApplyToJob = ({ slug, job_id }: { slug: string, job_id: string }) => {
             })
         })
         const data = await response.json()
-        console.log(data)
-        if (data.success) return setShowModal(false)
+        if (data.success) {
+            setShowModal(false)
+            setRefresh((prev: any) => prev + 1)
+        }
     }
+
+    // save/unsave job
+    const saveUnsaveJobHandler = async () => {
+        const response = await fetch(`/api/jobs/${slug}/save`, {
+            method: "PUT",
+            headers: {
+                "auth-token": localStorage.getItem("auth-token")!
+            }
+        })
+        const data = await response.json()
+        if (data.success) {
+            setRefresh((prev: any) => prev + 1)
+        }
+    }
+
     return (
         <>
             {
-                user?.applied_jobs.includes(job_id)
+                user && user?.applied_jobs.includes(slug)
                     ?
                     <p className="text-sm text-blue-500">&#10003; Already applied.</p>
                     :
                     <button className="border-blue-500 border-[1px] bg-blue-500 text-white py-2 px-6 text-sm rounded" onClick={() => setShowModal(true)}>Apply Now</button>
             }
+            <button className="border-blue-500 border-[1px] bor text-blue-500 py-2 px-6 text-sm rounded" onClick={saveUnsaveJobHandler}>{user && user?.saved_jobs.includes(slug) ? "Unsave" : "Save"}</button>
+
             {
                 showModal
                 &&

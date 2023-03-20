@@ -47,6 +47,7 @@ const Signup = () => {
         }
         if (resData.success) {
             localStorage.setItem("auth-token", resData.token)
+            window.location.href = "/"
         }
     }
 

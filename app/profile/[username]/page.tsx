@@ -17,12 +17,13 @@ const Profile = ({ params }: Param) => {
     const [error, setError] = useState<boolean>(false)
 
     useEffect(() => {
-        fetch(`/api/users/${username}`)
-            .then(res => res.json())
-            .then(data => {
-                if (data.error) return setError(true);
-                setUser(data)
-            })
+        const getProfile = async () => {
+            const response = await fetch(`/api/users/${username}`)
+            const data = await response.json()
+            if (data.error) return setError(true);
+            setUser(data)
+        }
+        getProfile()
     }, [])
 
     return (

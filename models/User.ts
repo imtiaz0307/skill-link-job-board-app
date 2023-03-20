@@ -51,6 +51,10 @@ const userSchema = new mongoose.Schema(
         searched_keywords: {
             type: Array,
             default: []
+        },
+        saved_jobs: {
+            type: Array,
+            default: []
         }
     },
     {

@@ -16,9 +16,12 @@ const Jobs = () => {
 
     // filtering jobs by the homepage's search query
     useEffect(() => {
-        fetch(`api/jobs${query ? `?job_title=${query}` : ""}`)
-            .then(res => res.json())
-            .then(data => setJobs(data))
+        const getJobs = async () => {
+            const response = await fetch(`api/jobs${query ? `?job_title=${query}` : ""}`)
+            const data = await response.json()
+            setJobs(data)
+        }
+        getJobs()
     }, [])
 
     // search handler

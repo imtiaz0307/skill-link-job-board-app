@@ -16,17 +16,19 @@ const Navbar = () => {
         if (typeof window !== "undefined") {
             setAuthToken(localStorage.getItem("auth-token")!)
 
-            // getting current user
-            fetch('/api/users/me', {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "auth-token": localStorage.getItem("auth-token")!
-                }
-            })
-                .then(res => res.json())
-                .then(data => setUser(data))
-                .catch(err => console.log(err))
+            if (localStorage.getItem("auth-token")) {
+                // getting current user
+                fetch('/api/users/me', {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "auth-token": localStorage.getItem("auth-token")!
+                    }
+                })
+                    .then(res => res.json())
+                    .then(data => setUser(data))
+                    .catch(err => console.log(err))
+            }
         }
 
         document.addEventListener("click", handlerShowProfileMenu)

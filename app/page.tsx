@@ -17,9 +17,12 @@ export default function Home() {
 
   // getting all the jobs
   useEffect(() => {
-    fetch('api/jobs')
-      .then(res => res.json())
-      .then(data => setJobs(data))
+    const getJobs = async () => {
+      const response = await fetch('/api/jobs')
+      const data = await response.json()
+      setJobs(data)
+    }
+    getJobs()
   }, [])
 
   // search handler
@@ -93,6 +96,8 @@ export default function Home() {
           {
             resources.slice(0, 6).map((resource, index) => <ResourceCard key={index} resource={resource} />)
           }
+        </div>
+        <div className="flex justify-center">
           <Link href={"/resources"} className="bg-blue-500 text-white py-4 px-12 text-lg rounded mt-10">See More</Link>
         </div>
       </section>

@@ -1,6 +1,7 @@
 export type User = {
     _id: string,
     applied_jobs: string[],
+    saved_jobs: string[],
     city: string,
     createdAt: string,
     date_of_birth: string,
