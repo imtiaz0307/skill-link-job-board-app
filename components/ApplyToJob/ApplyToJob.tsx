@@ -140,7 +140,8 @@ const ApplyToJob = ({ slug, setRefresh, refresh }: { slug: string, setRefresh: (
 
                             </div>
                         }
-                    </> :
+                    </>
+                    :
                     ""
             }
         </>

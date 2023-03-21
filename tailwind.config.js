@@ -9,7 +9,14 @@ module.exports = {
     extend: {
       maxHeight: {
         "600": "600px"
-      }
+      },
+      screens: {
+        "x-sm": "280px",
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+      },
     },
   },
   plugins: [],
