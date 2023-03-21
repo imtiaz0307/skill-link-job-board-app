@@ -1,9 +1,9 @@
 const Contact = () => {
     return (
         <main>
-            <section className="px-12 py-16 flex-col flex justify-center items-center bg-gradient-to-r from-sky-500 to-indigo-500">
-                <h3 className="text-[1.5rem] font-[500] text-center mb-3 text-white">Have any suggestions, queries or any sort of question?</h3>
-                <h1 className="text-[8rem] font-bold leading-none text-white text-center">Tell Us Here!</h1>
+            <section className="lg:px-12 sm:px-8 x-sm:px-4 py-16 flex-col flex justify-center items-center bg-gradient-to-r from-sky-500 to-indigo-500">
+                <h3 className="sm:text-[1.5rem] x-sm:text-[1rem] font-[500] text-center mb-3 text-white">Have any suggestions, queries or any sort of question?</h3>
+                <h1 className="md:text-[8rem] sm:text-[6rem] x-sm:text-[3rem] font-bold leading-none text-white text-center">Tell Us Here!</h1>
             </section>
             <section className="flex justify-center items-center">
                 <form className="w-full max-w-[700px] my-16 px-4">

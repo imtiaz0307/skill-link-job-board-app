@@ -1,10 +1,10 @@
 const About = () => {
     return (
         <main>
-            <section className="px-12 py-16 flex justify-center items-center bg-gradient-to-r from-sky-500 to-indigo-500">
-                <h1 className="text-[8rem] font-bold leading-none text-white text-center">What Is <br /> SkillLink?</h1>
+            <section className="lg:px-12 sm:px-8 x-sm:px-4 py-16 flex justify-center items-center bg-gradient-to-r from-sky-500 to-indigo-500">
+                <h1 className="md:text-[8rem] sm:text-[6rem] x-sm:text-[3rem] font-bold leading-none text-white text-center">What Is <br /> SkillLink?</h1>
             </section>
-            <section className="px-12 py-16 max-w-[700px] mx-auto">
+            <section className="lg:px-12 sm:px-8 x-sm:px-4 py-16 max-w-[700px] mx-auto">
                 {/* intro */}
                 <h2 className="text-[2.5rem] text-blue-500 font-[600]">Introduction:</h2>
                 <p className="text-gray-500 text-[1.1rem] font-[500] mb-10">Welcome to SkillLink, the ultimate platform for job seekers and recruiters alike. Our mission is to connect talented individuals with the right job opportunities, helping them achieve their career goals and grow professionally.</p>

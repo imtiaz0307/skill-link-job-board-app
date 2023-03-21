@@ -34,7 +34,7 @@ const Profile = ({ params }: Param) => {
                     <p>No user found</p>
                     :
                     <section>
-                        <h2 className="text-[2.5rem] font-[700] leading-none">{user?.fullname}</h2>
+                        <h2 className="sm:text-[2.5rem] x-sm:text-[1.8rem] font-[700] leading-none">{user?.fullname}</h2>
                         <div className="my-8 bg-sky-100 rounded-[10px] p-4 flex flex-col gap-4">
                             <p>Username: {user?.username}</p>
                             <p>Email: {user?.email}</p>

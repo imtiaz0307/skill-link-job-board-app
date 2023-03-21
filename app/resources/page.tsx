@@ -8,9 +8,9 @@ const Resources = () => {
     const [currentCount, setCurrentCount] = useState(1)
     return (
         <main>
-            <section className="px-12 py-12 flex flex-col items-center mx-auto max-w-[1300px]">
-                <h2 className="text-[4rem] font-[700] text-blue-500 text-center">Get Skilled!</h2>
-                <p className="text-[1.5rem] text-center text-gray-500 mb-[4rem]">We provide you the way to learn from the best resources out there!</p>
+            <section className="lg:px-12 sm:px-8 x-sm:px-4 py-12 flex flex-col items-center mx-auto max-w-[1300px]">
+                <h2 className="sm:text-[4rem] x-sm:text-[2rem] font-[700] text-blue-500 text-center">Get Skilled!</h2>
+                <p className="sm:text-[1.5rem] x-sm:text-[1rem] text-center text-gray-500 mb-[4rem]">We provide you the way to learn from the best resources out there!</p>
                 {/* resourcess */}
                 <div className="flex flex-wrap gap-8 justify-center">
                     {/* resource */}
