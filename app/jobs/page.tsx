@@ -41,11 +41,11 @@ const Jobs = () => {
     return (
         <main>
             {/* hero section */}
-            <section className='px-12 py-16 min-h-[400px] text-center bg-gradient-to-r from-sky-500 to-indigo-500'>
-                <h2 className='text-[4rem] font-[600] text-white'>Search Jobs!</h2>
-                <p className='text-center mb-16 text-[1.5rem] text-gray-200'>Enter the job title and city we will find the best for you!</p>
+            <section className='lg:px-12 sm:px-8 x-sm:px-4 py-16 min-h-[400px] text-center bg-gradient-to-r from-sky-500 to-indigo-500'>
+                <h2 className='sm:text-[4rem] x-sm:text-[2rem] font-[600] text-white'>Search Jobs!</h2>
+                <p className='text-center mb-16 sm:text-[1.5rem] x-sm:text-[1.1rem] text-gray-200'>Enter the job title and city we will find the best for you!</p>
                 {/* search form */}
-                <form className='flex items-end gap-4 max-w-[1000px] mx-auto bg-white rounded-[10px] p-4' onSubmit={searchHandler}>
+                <form className='flex x-sm:flex-col sm:flex-row sm:items-end x-sm:items-stretch gap-4 max-w-[1000px] mx-auto bg-white rounded-[10px] p-4' onSubmit={searchHandler}>
                     <div className='flex flex-col gap-2 text-left flex-1'>
                         <label htmlFor="jobTitle" className='pl-1 cursor-pointer text-blue-500 font-[600]'>Job Title</label>
                         <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} type="search" placeholder='Ex: Software Engineer' id="jobTitle" className='border-blue-200 border-2 p-2 rounded-[10px] outline-none' />
@@ -59,9 +59,9 @@ const Jobs = () => {
             </section>
 
             {/* jobs section */}
-            <section className='px-12 py-12 flex gap-4 max-w-[1300px] mx-auto'>
+            <section className=' lg:px-12 sm:px-8 x-sm:px-4 py-12 flex gap-4 max-w-[1300px] mx-auto'>
                 {/* filters */}
-                <div className='flex flex-col gap-4  bg-gradient-to-r from-sky-500 to-indigo-500  max-w-[250px] px-4 py-8 rounded-[10px] h-fit sticky top-[1rem]'>
+                <div className='md:flex x-sm:hidden flex-col gap-4  bg-gradient-to-r from-sky-500 to-indigo-500  max-w-[250px] px-4 py-8 rounded-[10px] h-fit sticky top-[1rem]'>
                     {/* salary range filter */}
                     <Filter filterTitles={["Salary Range", "10,000 - 30,000", "30,000 - 50,000", "50,000 - 100,000", "100,000+"]} jobs={jobs} setFilteredJobs={setFilteredJobs} name="salary_range" />
                     {/* job type filter */}
