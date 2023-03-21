@@ -8,7 +8,7 @@ const Resources = () => {
     const [currentCount, setCurrentCount] = useState(1)
     return (
         <main>
-            <section className="px-12 py-12 flex flex-col items-center">
+            <section className="px-12 py-12 flex flex-col items-center mx-auto max-w-[1300px]">
                 <h2 className="text-[4rem] font-[700] text-blue-500 text-center">Get Skilled!</h2>
                 <p className="text-[1.5rem] text-center text-gray-500 mb-[4rem]">We provide you the way to learn from the best resources out there!</p>
                 {/* resourcess */}

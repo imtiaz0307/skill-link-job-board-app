@@ -38,22 +38,24 @@ export default function Home() {
   return (
     <main>
       {/* hero section */}
-      <section className="px-12 min-h-[600px] max-h-600 flex justify-between gap-4 overflow-hidden bg-gradient-to-r from-sky-500 to-indigo-500">
-        {/* hero left */}
-        <div className="flex-[2] flex flex-col justify-center">
-          <h1 className="text-[8rem] font-bold leading-none text-white">SkillLink</h1>
-          <h3 className="text-[2rem] font-[600] leading-tight my-4 text-white">Linking Talent. Unlocking Potential.</h3>
-          <p className="text-gray-200 mb-20">The ultimate job board connecting top talent with amazing opportunities. Our platform leverages cutting-edge technology and vast industry connections to match job seekers with their dream career and help companies find the perfect fit. Unlock your full potential today with SkillLink.</p>
-          {/* search form */}
-          <form className="flex p-2 items-center border-blue-400 border-2 rounded-xl overflow-hidden bg-white" onSubmit={searchHandler}>
-            <input type="search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Enter the job title and see the magic..." className="bg-transparent w-full outline-none text-lg pl-2" />
-            <button type="submit" className="bg-blue-500 text-white py-2 px-8 text-lg rounded">Search</button>
-            <Link href={{ pathname: "/jobs", query: { query: searchQuery } }} ref={redirectLinkRef} hidden></Link>
-          </form>
-        </div>
-        {/* hero right */}
-        <div className="flex-[1] flex items-start justify-center h-full min-w-[400px]">
-          <Image src={'/hero.png'} alt={"Guy standing confidentally"} height={10000} width={10000} draggable="false" className="w-[100%] h-full object-cover" />
+      <section className="flex justify-center bg-gradient-to-r from-sky-500 to-indigo-500">
+        <div className="max-w-[1300px] px-12 min-h-[600px] max-h-600 flex justify-between gap-4 overflow-hidden ">
+          {/* hero left */}
+          <div className="flex-[2] flex flex-col justify-center">
+            <h1 className="text-[8rem] font-bold leading-none text-white">SkillLink</h1>
+            <h3 className="text-[2rem] font-[600] leading-tight my-4 text-white">Linking Talent. Unlocking Potential.</h3>
+            <p className="text-gray-200 mb-20">The ultimate job board connecting top talent with amazing opportunities. Our platform leverages cutting-edge technology and vast industry connections to match job seekers with their dream career and help companies find the perfect fit. Unlock your full potential today with SkillLink.</p>
+            {/* search form */}
+            <form className="flex p-2 items-center border-blue-400 border-2 rounded-xl overflow-hidden bg-white" onSubmit={searchHandler}>
+              <input type="search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Enter the job title and see the magic..." className="bg-transparent w-full outline-none text-lg pl-2" />
+              <button type="submit" className="bg-blue-500 text-white py-2 px-8 text-lg rounded">Search</button>
+              <Link href={{ pathname: "/jobs", query: { query: searchQuery } }} ref={redirectLinkRef} hidden></Link>
+            </form>
+          </div>
+          {/* hero right */}
+          <div className="flex-[1] flex items-start justify-center h-full min-w-[400px]">
+            <Image src={'/hero.png'} alt={"Guy standing confidentally"} height={10000} width={10000} draggable="false" className="w-[100%] h-full object-cover" />
+          </div>
         </div>
       </section>
 
@@ -88,7 +90,7 @@ export default function Home() {
       </section>
 
       {/* resources section */}
-      <section className="py-12 px-12">
+      <section className="py-12 px-12 max-w-[1300px] mx-auto">
         <h2 className="text-blue-500 text-[3rem] font-[600] text-center mb-10">Recommended Resources!</h2>
         {/* resourcess */}
         <div className="flex flex-wrap gap-8 justify-center">

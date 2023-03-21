@@ -59,7 +59,7 @@ const Jobs = () => {
             </section>
 
             {/* jobs section */}
-            <section className='px-12 py-12 flex gap-4'>
+            <section className='px-12 py-12 flex gap-4 max-w-[1300px] mx-auto'>
                 {/* filters */}
                 <div className='flex flex-col gap-4  bg-gradient-to-r from-sky-500 to-indigo-500  max-w-[250px] px-4 py-8 rounded-[10px] h-fit sticky top-[1rem]'>
                     {/* salary range filter */}

@@ -52,65 +52,67 @@ const Navbar = () => {
         setShowProfileMenu(false)
     }
     return (
-        <nav className="flex justify-between items-center px-12 h-20 bg-gradient-to-r from-sky-500 to-indigo-500 text-white">
-            <Link href={'/'} className="text-4xl  font-bold">
-                SkillLink
-            </Link>
-            <ul className="flex items-center gap-8">
-                <li>
-                    <Link href={"/"}>Home</Link>
-                </li>
-                <li>
-                    <Link href={"/jobs"}>Jobs</Link>
-                </li>
-                <li>
-                    <Link href={"/resources"}>Resources</Link>
-                </li>
-                <li>
-                    <Link href={"/about"}>About Us</Link>
-                </li>
-                <li>
-                    <Link href={"/contact"}>Contact Us</Link>
-                </li>
-                <li>
-                    {
-                        authToken
-                            ?
-                            <div ref={userIconRef} className="relative">
-                                <HiUserCircle fontSize={36} cursor={"pointer"} />
-                                {
-                                    showProfileMenu
-                                        ?
-                                        <ul className="absolute bg-white top-6 right-0 rounded-[10px] overflow-hidden border-blue-200 border-2">
-                                            <li>
-                                                <Link href={`/profile/${user?.username}`} className="py-4 px-4 border-b-blue-200 border-b-2 text-blue-500 flex items-center gap-2">
-                                                    <HiOutlineUserCircle fontSize={24} />
-                                                    <span>Profile</span>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link href={`/settings`} className="py-4 px-4 border-b-blue-200 border-b-2 text-blue-500 flex items-center gap-2">
-                                                    <IoSettingsOutline fontSize={24} />
-                                                    <span>Settings</span>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <div className="py-4 px-4 text-blue-500 flex items-center gap-2 cursor-pointer" onClick={handlerLogout}>
-                                                    <IoExitOutline fontSize={24} />
-                                                    <span>Logout</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        :
-                                        null
-                                }
-                            </div>
-                            :
-                            <Link href={"/auth/login"} className="bg-white text-blue-500 font-[600] py-3 px-10 rounded">Login</Link>
-                    }
-                </li>
-            </ul>
-        </nav>
+        <header className="bg-gradient-to-r from-sky-500 to-indigo-500 flex justify-center">
+            <nav className="flex justify-between items-center px-12 h-20  text-white max-w-[1300px] w-full">
+                <Link href={'/'} className="text-4xl  font-bold">
+                    SkillLink
+                </Link>
+                <ul className="flex items-center gap-8">
+                    <li>
+                        <Link href={"/"}>Home</Link>
+                    </li>
+                    <li>
+                        <Link href={"/jobs"}>Jobs</Link>
+                    </li>
+                    <li>
+                        <Link href={"/resources"}>Resources</Link>
+                    </li>
+                    <li>
+                        <Link href={"/about"}>About Us</Link>
+                    </li>
+                    <li>
+                        <Link href={"/contact"}>Contact Us</Link>
+                    </li>
+                    <li>
+                        {
+                            authToken
+                                ?
+                                <div ref={userIconRef} className="relative">
+                                    <HiUserCircle fontSize={36} cursor={"pointer"} />
+                                    {
+                                        showProfileMenu
+                                            ?
+                                            <ul className="absolute bg-white top-6 right-0 rounded-[10px] overflow-hidden border-blue-200 border-2">
+                                                <li>
+                                                    <Link href={`/profile/${user?.username}`} className="py-4 px-4 border-b-blue-200 border-b-2 text-blue-500 flex items-center gap-2">
+                                                        <HiOutlineUserCircle fontSize={24} />
+                                                        <span>Profile</span>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link href={`/settings`} className="py-4 px-4 border-b-blue-200 border-b-2 text-blue-500 flex items-center gap-2">
+                                                        <IoSettingsOutline fontSize={24} />
+                                                        <span>Settings</span>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <div className="py-4 px-4 text-blue-500 flex items-center gap-2 cursor-pointer" onClick={handlerLogout}>
+                                                        <IoExitOutline fontSize={24} />
+                                                        <span>Logout</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            :
+                                            null
+                                    }
+                                </div>
+                                :
+                                <Link href={"/auth/login"} className="bg-white text-blue-500 font-[600] py-3 px-10 rounded">Login</Link>
+                        }
+                    </li>
+                </ul>
+            </nav>
+        </header>
     )
 }
 
