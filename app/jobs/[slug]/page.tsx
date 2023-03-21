@@ -52,8 +52,8 @@ const JobPage = ({ params }: Param) => {
             {
                 job
                 &&
-                <section className="px-12 py-10 flex gap-4 max-w-[1300px] mx-auto">
-                    <div className="p-4 border-blue-200 border-2 rounded-[10px] max-w-[500px] min-w-[300px] flex-1">
+                <section className="lg:px-12 sm:px-8 x-sm:px-4 md:flex-row x-sm:flex-col py-10 flex gap-4 max-w-[1300px] mx-auto">
+                    <div className="p-4 border-blue-200 border-2 rounded-[10px] md:max-w-[500px] sm:w-full md:min-w-[300px] flex-1">
                         {/* job title */}
                         <h1 className="text-[2rem] font-[600] text-blue-500">{job?.job_title}</h1>
                         {/* company and experience details */}
