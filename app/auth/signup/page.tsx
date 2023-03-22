@@ -54,7 +54,7 @@ const Signup = () => {
     return (
         <main className='flex justify-center items-center py-12 px-6'>
             <form className='border-blue-200 border-2 rounded-[10px] w-full max-w-[800px] p-4' method='POST' onSubmit={handleSubmit(signUp)}>
-                <h2 className='text-blue-500 text-[2rem] font-[700] text-center mb-12'>Signup to SkillLink!</h2>
+                <h2 className='text-blue-500 sm:text-[2rem] x-sm:text-[1.5rem] font-[700] text-center mb-12'>Signup to SkillLink!</h2>
                 <div className='flex gap-4 flex-wrap mb-4'>
                     <div className='flex flex-col gap2 flex-1 w-full min-w-[250px]'>
                         <label htmlFor='fullname' className="text-blue-500 font-[600] pl-1 cursor-pointer">Fullname</label>

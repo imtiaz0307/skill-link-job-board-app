@@ -9,6 +9,7 @@ import { IoExitOutline, IoSettingsOutline } from "react-icons/io5"
 const Navbar = () => {
     const [authToken, setAuthToken] = useState<string>("")
     const [showProfileMenu, setShowProfileMenu] = useState<boolean>(false)
+    const [showMenu, setShowMenu] = useState<boolean>(false)
     const [user, setUser] = useState<User | null>(null)
     const userIconRef = useRef<HTMLDivElement | null>(null)
 
@@ -52,27 +53,35 @@ const Navbar = () => {
         setShowProfileMenu(false)
     }
     return (
-        <header className="bg-gradient-to-r from-sky-500 to-indigo-500 flex justify-center">
-            <nav className="flex justify-between items-center px-12 h-20  text-white max-w-[1300px] w-full">
-                <Link href={'/'} className="text-4xl  font-bold">
+        <header className="bg-gradient-to-r from-sky-500 to-indigo-500 flex justify-center sticky top-0 z-50">
+            <nav className="flex justify-between items-center lg:px-12 sm:px-8 x-sm:px-2 h-20  text-white max-w-[1300px] w-full">
+                <div className="md:hidden x-sm:flex w-[30px] h-[30px] flex-col justify-center gap-1 cursor-pointer" onClick={() => setShowMenu(true)}>
+                    <div className="h-[5px] w-full bg-white rounded-[20px]"></div>
+                    <div className="h-[5px] w-full bg-white rounded-[20px]"></div>
+                    <div className="h-[5px] w-full bg-white rounded-[20px]"></div>
+                </div>
+                <Link href={'/'} className="sm:text-4xl x-sm:text-[30px] font-bold">
                     SkillLink
                 </Link>
                 <ul className="flex items-center gap-8">
-                    <li>
-                        <Link href={"/"}>Home</Link>
-                    </li>
-                    <li>
-                        <Link href={"/jobs"}>Jobs</Link>
-                    </li>
-                    <li>
-                        <Link href={"/resources"}>Resources</Link>
-                    </li>
-                    <li>
-                        <Link href={"/about"}>About Us</Link>
-                    </li>
-                    <li>
-                        <Link href={"/contact"}>Contact Us</Link>
-                    </li>
+                    <div className={`flex items-center gap-8 md:static md:flex-row md:bg-transparent x-sm:absolute ${showMenu ? "x-sm:left-0" : "x-sm:left-[-400px]"} x-sm:top-0 x-sm:bg-blue-500 x-sm:flex-col x-sm:h-[100vh] x-sm:min-w-[250px] x-sm:justify-center duration-300 transition-all`}>
+                        <span className="absolute top-[20px] right-[20px] cursor-pointer text-2xl md:hidden" onClick={() => setShowMenu(false)}>&larr;</span>
+                        <li>
+                            <Link href={"/"}>Home</Link>
+                        </li>
+                        <li>
+                            <Link href={"/jobs"}>Jobs</Link>
+                        </li>
+                        <li>
+                            <Link href={"/resources"}>Resources</Link>
+                        </li>
+                        <li>
+                            <Link href={"/about"}>About Us</Link>
+                        </li>
+                        <li>
+                            <Link href={"/contact"}>Contact Us</Link>
+                        </li>
+                    </div>
                     <li>
                         {
                             authToken
@@ -107,7 +116,7 @@ const Navbar = () => {
                                     }
                                 </div>
                                 :
-                                <Link href={"/auth/login"} className="bg-white text-blue-500 font-[600] py-3 px-10 rounded">Login</Link>
+                                <Link href={"/auth/login"} className="bg-white text-blue-500 font-[600] py-3 sm:px-10 rounded x-sm:px-6 x-sm:text-xs">Login</Link>
                         }
                     </li>
                 </ul>
