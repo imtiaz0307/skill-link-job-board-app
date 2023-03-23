@@ -64,7 +64,13 @@ const Navbar = () => {
                     SkillLink
                 </Link>
                 <ul className="flex items-center gap-8">
-                    <div className={`flex items-center gap-8 md:static md:flex-row md:bg-transparent x-sm:absolute ${showMenu ? "x-sm:left-0" : "x-sm:left-[-400px]"} x-sm:top-0 x-sm:bg-blue-500 x-sm:flex-col x-sm:h-[100vh] x-sm:min-w-[250px] x-sm:justify-center duration-300 transition-all`}>
+                    <div className={`flex items-center gap-8 md:static md:flex-row md:bg-transparent md:h-fit x-sm:absolute ${showMenu ? "x-sm:left-0" : "x-sm:left-[-400px]"} x-sm:top-0 x-sm:bg-blue-500 x-sm:flex-col x-sm:h-[100vh] x-sm:min-w-[250px] x-sm:justify-center duration-300 transition-all`}
+                        onClick={(e) => {
+                            const eventElement = e.target as HTMLElement
+                            if (eventElement.tagName === "A") {
+                                setShowMenu(false)
+                            }
+                        }}>
                         <span className="absolute top-[20px] right-[20px] cursor-pointer text-2xl md:hidden" onClick={() => setShowMenu(false)}>&larr;</span>
                         <li>
                             <Link href={"/"}>Home</Link>
@@ -91,7 +97,13 @@ const Navbar = () => {
                                     {
                                         showProfileMenu
                                             ?
-                                            <ul className="absolute bg-white top-6 right-0 rounded-[10px] overflow-hidden border-blue-200 border-2">
+                                            <ul className="absolute bg-white top-6 right-0 rounded-[10px] overflow-hidden border-blue-200 border-2"
+                                                onClick={(e) => {
+                                                    const eventElement = e.target as HTMLElement
+                                                    if (eventElement.tagName === "A" || eventElement.parentElement?.tagName === "A") {
+                                                        setShowProfileMenu(false)
+                                                    }
+                                                }}>
                                                 <li>
                                                     <Link href={`/profile/${user?.username}`} className="py-4 px-4 border-b-blue-200 border-b-2 text-blue-500 flex items-center gap-2">
                                                         <HiOutlineUserCircle fontSize={24} />
