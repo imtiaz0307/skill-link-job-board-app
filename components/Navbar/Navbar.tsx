@@ -2,11 +2,13 @@
 
 import { User } from "@/types/User"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import { HiUserCircle, HiOutlineUserCircle } from "react-icons/hi2"
 import { IoExitOutline, IoSettingsOutline } from "react-icons/io5"
 
 const Navbar = () => {
+    const pathname = usePathname()
     const [authToken, setAuthToken] = useState<string>("")
     const [showProfileMenu, setShowProfileMenu] = useState<boolean>(false)
     const [showMenu, setShowMenu] = useState<boolean>(false)
@@ -30,6 +32,12 @@ const Navbar = () => {
                     .then(data => setUser(data))
                     .catch(err => console.log(err))
             }
+            if (!localStorage.getItem("auth-token") && pathname?.includes("/jobs/")) {
+                window.location.href = "/auth/login"
+            }
+            if (localStorage.getItem("auth-token") && pathname === "/auth/login" || pathname === "/auth/signup") {
+                window.location.href = "/"
+            }
         }
 
         document.addEventListener("click", handlerShowProfileMenu)
@@ -37,7 +45,7 @@ const Navbar = () => {
         return () => {
             document.removeEventListener("click", handlerShowProfileMenu)
         }
-    }, [])
+    }, [authToken])
 
     const handlerShowProfileMenu = (e: MouseEvent) => {
         if (userIconRef.current && userIconRef.current.contains(e.target as Node)) {
@@ -52,6 +60,7 @@ const Navbar = () => {
         setAuthToken("")
         setShowProfileMenu(false)
     }
+
     return (
         <header className="bg-gradient-to-r from-sky-500 to-indigo-500 flex justify-center sticky top-0 z-50">
             <nav className="flex justify-between items-center lg:px-12 sm:px-8 x-sm:px-2 h-20  text-white max-w-[1300px] w-full">
